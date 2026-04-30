@@ -15,15 +15,15 @@ const milestones = [
     phase: "Phase 1",
     title: "Community Established",
     date: "2020",
-    desc: "Islamic Center of Laveen was founded to serve the growing Muslim community in the Laveen area. Regular prayers and programs began at our current location.",
+    desc: "A group of Muslim families in Laveen answered the call — they needed a masjid. With du'a and determination, the Islamic Center of Laveen was born. The adhan rang out for the first time in Laveen. Alhamdulillah.",
     status: "completed",
     icon: "🕌",
   },
   {
     phase: "Phase 2",
-    title: "Land Identification",
+    title: "Land Identified",
     date: "2022",
-    desc: "The community identified a suitable permanent location in Laveen to build the masjid. Fundraising campaigns launched to support the acquisition.",
+    desc: "After much searching and prayer, a suitable permanent location in Laveen was identified. The dream of owning a masjid — a place where no one could one day tell us to leave — became a real goal.",
     status: "completed",
     icon: "📍",
   },
@@ -31,7 +31,7 @@ const milestones = [
     phase: "Phase 3",
     title: "Fundraising Campaign",
     date: "2023 – Present",
-    desc: "Active fundraising through Mohid platform and community events. Alhamdulillah, the community has been incredibly generous. Every dollar counts.",
+    desc: "We launched our building fund and the ummah responded with open hearts. Alhamdulillah — families giving $10, individuals giving $10,000, all united by one intention: to build a house for Allah.",
     status: "active",
     icon: "💚",
   },
@@ -39,7 +39,7 @@ const milestones = [
     phase: "Phase 4",
     title: "Design & Planning",
     date: "In Progress",
-    desc: "Architectural design and planning phase — working with Islamic architects to create a beautiful, functional masjid that reflects our heritage.",
+    desc: "We are working with Islamic architects to design a masjid that is functional, beautiful, and reflective of our heritage. Every detail is being crafted with worship at its center.",
     status: "active",
     icon: "📐",
   },
@@ -47,7 +47,7 @@ const milestones = [
     phase: "Phase 5",
     title: "Construction Begins",
     date: "Upcoming",
-    desc: "Breaking ground on our permanent masjid facility, insha'Allah. This will include a prayer hall, classrooms, ablution area, and community spaces.",
+    desc: "Insha'Allah, the day will come when we break ground. A day our children will remember. A day that begins with a du'a and ends with the beginning of something built to last generations.",
     status: "upcoming",
     icon: "🏗️",
   },
@@ -55,19 +55,19 @@ const milestones = [
     phase: "Phase 6",
     title: "Grand Opening",
     date: "Insha'Allah",
-    desc: "The Islamic Center of Laveen opens its doors as a full masjid and community center serving Muslims in Laveen for generations to come.",
+    desc: "The adhan echoes from a masjid that belongs to the Muslim community of Laveen — forever. A prayer hall filled to capacity. Children learning Quran in dedicated classrooms. The dream realized.",
     status: "upcoming",
     icon: "🎉",
   },
 ];
 
 const features = [
-  { icon: "🕌", label: "Main Prayer Hall", desc: "Capacity for 500+ worshippers" },
-  { icon: "👦", label: "Children's Area", desc: "Dedicated kids' prayer space" },
-  { icon: "📚", label: "Classrooms", desc: "For school and halaqas" },
-  { icon: "🚿", label: "Ablution Facilities", desc: "Full wudu facilities for men & women" },
-  { icon: "👩", label: "Sisters' Section", desc: "Separate sisters' prayer hall" },
-  { icon: "🤝", label: "Community Hall", desc: "For events and gatherings" },
+  { icon: "🕌", label: "Main Prayer Hall", desc: "Capacity for 500+ worshippers — room for every brother and sister" },
+  { icon: "👦", label: "Children's Area", desc: "A dedicated space so families can pray together without worry" },
+  { icon: "📚", label: "Classrooms", desc: "Rooms designed for Hifz school, halaqas, and Islamic studies" },
+  { icon: "🚿", label: "Ablution Facilities", desc: "Full wudu areas for brothers and sisters — clean, spacious, dignified" },
+  { icon: "👩", label: "Sisters' Section", desc: "A complete, private prayer hall for our sisters — as it should be" },
+  { icon: "🤝", label: "Community Hall", desc: "For weddings, iftars, community dinners, and gatherings of joy" },
 ];
 
 export default function ConstructionPage() {
@@ -75,9 +75,9 @@ export default function ConstructionPage() {
     <>
       <PageHero
         badge="Building Our Home"
-        title="Construction"
-        titleHighlight="Updates"
-        subtitle="Follow our journey as we build a permanent home for the Muslim community in Laveen, AZ"
+        title="Help Us Build"
+        titleHighlight="Allah's House"
+        subtitle="Every Muslim family in Laveen deserves a masjid they can call home. We are building it — brick by brick, prayer by prayer, together."
         arabicText="إِنَّمَا يَعْمُرُ مَسَاجِدَ اللَّهِ مَنْ آمَنَ بِاللَّهِ"
       />
 
@@ -101,7 +101,7 @@ export default function ConstructionPage() {
             badge="Our Journey"
             title="Building"
             titleHighlight="Milestones"
-            subtitle="Every great masjid starts with a community's determination. Here is our journey so far."
+            subtitle="Every great masjid in history started with people who refused to give up. This is our story."
           />
 
           <div className="relative">
@@ -165,7 +165,7 @@ export default function ConstructionPage() {
             badge="Future Facility"
             title="What We're"
             titleHighlight="Building"
-            subtitle="The permanent ICL masjid will be a state-of-the-art facility designed for worship, education, and community."
+            subtitle="A permanent masjid designed from the ground up for worship, community, education, and dignity."
           />
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -192,9 +192,9 @@ export default function ConstructionPage() {
         <div className="max-w-7xl mx-auto px-4">
           <SectionTitle
             badge="Gallery"
-            title="Community"
-            titleHighlight="Photos"
-            subtitle="Our current home and the community we serve."
+            title="Our Community"
+            titleHighlight="Today"
+            subtitle="The faces and spaces of ICL — a community united by faith, growing every day."
           />
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -220,12 +220,13 @@ export default function ConstructionPage() {
       {/* Donate CTA */}
       <section className="py-16 bg-islamic-700">
         <div className="max-w-3xl mx-auto px-4 text-center" data-aos="fade-up">
-          <p className="font-cinzel text-gold-400 text-2xl mb-3 arabic-text">ابْنِ مَسْجِدًا</p>
+          <p className="font-cinzel text-gold-400 text-2xl mb-3 arabic-text">مَن يَبْنِي مَسْجِدًا لِلَّهِ</p>
           <h2 className="font-cinzel font-bold text-3xl md:text-4xl text-white mb-4">
-            Help Build Our Masjid
+            Be Among the Builders
           </h2>
           <p className="text-islamic-200 text-lg leading-relaxed mb-8">
-            The Prophet ﷺ said: &quot;Whoever builds a masjid for Allah, Allah will build for him a house in Paradise.&quot; — Bukhari &amp; Muslim
+            The Prophet ﷺ said: &quot;Whoever builds a masjid for Allah, Allah will build for him a house in Paradise.&quot; (Bukhari &amp; Muslim)<br /><br />
+            Your name may not be on the wall — but your reward is with Allah. Give today and become one of the builders of Laveen&apos;s permanent masjid.
           </p>
           <a
             href={MOHID_DONATION_URL}
@@ -233,7 +234,7 @@ export default function ConstructionPage() {
             rel="noopener noreferrer"
             className="inline-block bg-white text-islamic-700 font-cinzel font-bold text-lg px-12 py-5 rounded-full hover:bg-islamic-50 transition-colors shadow-xl"
           >
-            Donate to Building Fund
+            Donate to the Building Fund
           </a>
         </div>
       </section>

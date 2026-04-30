@@ -14,7 +14,7 @@ const programs = [
     icon: "📖",
     title: "Kids Hifz Program",
     subtitle: "Ages 6–16",
-    desc: "A structured program helping children memorize the Holy Quran with proper Tajweed. Classes held multiple times per week in a nurturing Islamic environment.",
+    desc: "Imagine placing a crown of light on your parents' heads on the Day of Judgment. That journey begins here — with patient, structured Hifz classes that nurture children's love of the Quran.",
     schedule: "Mon, Wed, Fri · After Asr",
     color: "from-islamic-700 to-islamic-900",
   },
@@ -22,7 +22,7 @@ const programs = [
     icon: "🎓",
     title: "Adults Hifz Program",
     subtitle: "All Ages",
-    desc: "It's never too late to memorize the Quran. Our adult Hifz track accommodates working professionals with flexible scheduling.",
+    desc: "It is never too late to carry the words of Allah in your heart. Our adult Hifz track is designed around your life — flexible, encouraging, and free of judgment. Your age is not a barrier.",
     schedule: "Sat & Sun · Morning",
     color: "from-islamic-600 to-islamic-800",
   },
@@ -30,7 +30,7 @@ const programs = [
     icon: "🕌",
     title: "Weekend Islamic School",
     subtitle: "Ages 5–14",
-    desc: "Comprehensive weekend school covering Quran recitation, Islamic Studies, Seerah, Fiqh, and Arabic language fundamentals.",
+    desc: "Give your children the foundation that no secular school can provide. Our weekend school weaves Quran, Seerah, Fiqh, and Arabic into a joyful, structured learning experience.",
     schedule: "Saturday & Sunday",
     color: "from-gold-600 to-gold-700",
   },
@@ -38,19 +38,19 @@ const programs = [
     icon: "📚",
     title: "Tafseer Halaqa",
     subtitle: "Open to All",
-    desc: "Weekly in-depth study of the Quran's meanings and context led by the Imam. Deepens understanding and strengthens connection with the Book of Allah.",
+    desc: "The Quran speaks — do you understand what it says? Our weekly Tafseer halaqa unlocks the depth, beauty, and guidance of the Book of Allah. Come curious, leave transformed.",
     schedule: "Wednesday · After Maghrib",
     color: "from-islamic-500 to-islamic-700",
   },
 ];
 
 const curriculum = [
-  { subject: "Quran Hifz", desc: "Systematic memorization with Tajweed rules" },
-  { subject: "Quran Recitation", desc: "Proper pronunciation and rules of Tajweed" },
-  { subject: "Islamic Studies", desc: "Pillars of Islam, Pillars of Iman, Fiqh basics" },
-  { subject: "Seerah", desc: "Life of Prophet Muhammad ﷺ and companions" },
-  { subject: "Arabic Language", desc: "Foundational Arabic for Quran comprehension" },
-  { subject: "Aqeedah", desc: "Islamic creed and belief system" },
+  { subject: "Quran Hifz", desc: "Systematic memorization with proper Tajweed and daily revision" },
+  { subject: "Quran Recitation", desc: "Beautiful, correct pronunciation through the rules of Tajweed" },
+  { subject: "Islamic Studies", desc: "Pillars of Islam, Pillars of Iman, Fiqh of daily life" },
+  { subject: "Seerah", desc: "The life of Prophet Muhammad ﷺ — our greatest role model" },
+  { subject: "Arabic Language", desc: "Foundational Arabic so students can understand what they recite" },
+  { subject: "Aqeedah", desc: "Firm Islamic belief and understanding of who we worship and why" },
 ];
 
 export default function EducationPage() {
@@ -60,7 +60,7 @@ export default function EducationPage() {
         badge="Islamic Education"
         title="Noor Al-Quran"
         titleHighlight="School at ICL"
-        subtitle="Comprehensive Quran education for children and adults in Laveen, AZ"
+        subtitle="The best gift you can give your child is a heart connected to the Quran. That gift is available right here in Laveen."
         arabicText="اقْرَأْ بِاسْمِ رَبِّكَ الَّذِي خَلَقَ"
       />
 
@@ -82,22 +82,22 @@ export default function EducationPage() {
                 Our School
               </span>
               <h2 className="font-cinzel font-bold text-3xl md:text-4xl text-islamic-700 mb-5 leading-tight">
-                Building Huffadh &<br />
-                <span className="text-islamic-400">Scholars for Tomorrow</span>
+                Planting the Quran<br />
+                <span className="text-islamic-400">in the Soil of Young Hearts</span>
               </h2>
               <div className="space-y-4 text-gray-600 leading-relaxed">
                 <p>
-                  Welcome to Noor Al-Quran School — the educational arm of Islamic Center of Laveen. Our school provides a brief but comprehensive overview of academic activities, policies, and procedures designed to cultivate a deep love for the Quran.
+                  The Prophet ﷺ said: &quot;The best among you are those who learn the Quran and teach it.&quot; At the Noor Al-Quran School, we take that hadith seriously — building a space where learning the Book of Allah is joyful, structured, and life-changing.
                 </p>
                 <p>
-                  Whether you are enrolling a young child for the first time or an adult looking to complete your own Hifz journey, the Noor Al-Quran School has a program for you.
+                  Whether your child is picking up a mushaf for the very first time or you&apos;re an adult who has always dreamed of completing your Hifz — there is a place for you here. Our Imam, Sheikh Mahmud Iddrisu, brings patience, knowledge, and genuine love for every student who walks through our doors.
                 </p>
               </div>
 
               <div className="grid grid-cols-2 gap-4 mt-8">
                 {[
                   { value: "50+", label: "Students Enrolled" },
-                  { value: "4+", label: "Years of Service" },
+                  { value: "4+", label: "Years of Serving Laveen" },
                   { value: "4", label: "Active Programs" },
                   { value: "2", label: "Age Groups" },
                 ].map((s) => (
@@ -117,9 +117,9 @@ export default function EducationPage() {
         <div className="max-w-7xl mx-auto px-4">
           <SectionTitle
             badge="Programs Offered"
-            title="Choose Your"
-            titleHighlight="Learning Path"
-            subtitle="All programs are led by Imam Sheikh Mahmud Iddrisu with a focus on proper recitation, memorization, and Islamic character."
+            title="Your Path to"
+            titleHighlight="the Quran"
+            subtitle="Every program is led by Imam Sheikh Mahmud Iddrisu with an emphasis on proper recitation, deep memorization, and beautiful Islamic character."
           />
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -156,7 +156,7 @@ export default function EducationPage() {
             badge="Curriculum"
             title="What We"
             titleHighlight="Teach"
-            subtitle="Our curriculum is designed to build well-rounded Muslim students with strong Quranic foundation and Islamic character."
+            subtitle="A complete Islamic curriculum designed to build students who are grounded in their faith, proud of their identity, and rooted in the Quran."
           />
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5" data-aos="fade-up" data-aos-delay="100">
@@ -179,7 +179,7 @@ export default function EducationPage() {
       <section className="py-20 bg-islamic-50">
         <div className="max-w-3xl mx-auto px-4 text-center" data-aos="fade-up">
           <span className="inline-block bg-islamic-100 text-islamic-700 font-cinzel font-semibold text-xs px-4 py-1.5 rounded-full uppercase tracking-wider mb-6">
-            Our Imam
+            Our Imam & Teacher
           </span>
           <div className="bg-white rounded-3xl p-10 shadow-sm border border-islamic-100">
             <div className="w-24 h-24 bg-islamic-700 rounded-full flex items-center justify-center text-5xl mx-auto mb-6">
@@ -190,7 +190,7 @@ export default function EducationPage() {
             </h3>
             <p className="text-islamic-500 font-semibold mb-5">Masjid Imam · Head Teacher</p>
             <p className="text-gray-600 leading-relaxed">
-              Sheikh Mahmud Iddrisu leads all educational programs at ICL, including Tafseer Halaqa, Hifz classes, and the Friday Night Halaqa. His dedication to the community has helped dozens of students deepen their connection with the Quran and Islamic knowledge.
+              Sheikh Mahmud brings more than knowledge to the classroom — he brings heart. His teaching style is patient, encouraging, and deeply rooted in his love for the Quran. Dozens of students in Laveen have deepened their connection to the Book of Allah under his guidance, and many carry their Hifz because he believed in them when it was hard.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               {["Quran Hifz", "Tafseer", "Tajweed", "Islamic Studies", "Arabic"].map((tag) => (
@@ -207,10 +207,10 @@ export default function EducationPage() {
       <section className="py-16 bg-islamic-700">
         <div className="max-w-3xl mx-auto px-4 text-center" data-aos="fade-up">
           <h2 className="font-cinzel font-bold text-3xl md:text-4xl text-white mb-4">
-            Ready to Enroll?
+            Don&apos;t Wait — Enroll Today
           </h2>
           <p className="text-islamic-200 text-lg mb-8">
-            Contact us today to register your child or yourself for the upcoming semester.
+            Every day without the Quran is a day of opportunity missed. Register your child — or yourself — for the upcoming semester. The journey of a thousand ayahs begins with one class.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a

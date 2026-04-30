@@ -20,20 +20,20 @@ export default function AboutSection() {
               About ICL
             </span>
             <h2 className="font-cinzel font-bold text-3xl md:text-4xl text-islamic-700 mb-5 leading-tight">
-              More Than a Masjid —<br />
-              <span className="text-islamic-400">We Are a Community</span>
+              A Place Where Every<br />
+              <span className="text-islamic-400">Muslim Belongs</span>
             </h2>
             <div className="space-y-4 text-gray-600 leading-relaxed">
               <p>
-                At ICL, we are committed to helping our community and the people within it. The Islamic Center of Laveen is a place of worship, learning, and growth for every Muslim family in the Laveen area.
+                When Muslim families first settled in Laveen, they longed for what every believer needs — a masjid to call home. A place to pray Fajr before sunrise, to hear the adhan echo through the neighborhood, and to raise children who know their deen.
               </p>
               <p className="italic border-l-4 border-gold-500 pl-4 text-gray-500">
-                &quot;Be kind, for whenever kindness becomes part of something, it beautifies it. Whenever it is taken from something, it leaves it tarnished.&quot;
+                &quot;The believers in their mutual kindness, compassion, and sympathy are just like one body — when any part of the body suffers, the whole body feels pain.&quot;
                 <br />
-                <span className="text-gold-600 font-semibold not-italic text-sm">— Prophet Muhammad ﷺ</span>
+                <span className="text-gold-600 font-semibold not-italic text-sm">— Prophet Muhammad ﷺ (Bukhari &amp; Muslim)</span>
               </p>
               <p>
-                We believe that the masjid should be more than a gathering of the faithful — it should be a gathering of people looking to beautify both themselves and the world around them.
+                That dream became the Islamic Center of Laveen. Today, ICL is more than a prayer space — it is a living, breathing community of families, neighbors, and brothers and sisters in faith.
               </p>
             </div>
             <div className="mt-8">
@@ -41,7 +41,7 @@ export default function AboutSection() {
                 href="/about"
                 className="inline-block bg-islamic-700 hover:bg-islamic-600 text-white font-cinzel font-bold px-8 py-4 rounded-full transition-colors"
               >
-                About Us →
+                Our Story →
               </a>
             </div>
           </div>
@@ -54,15 +54,15 @@ export default function AboutSection() {
               Islamic Education
             </span>
             <h2 className="font-cinzel font-bold text-3xl md:text-4xl text-islamic-700 mb-5 leading-tight">
-              Noor Al-Quran<br />
-              <span className="text-islamic-400">Hifz School at ICL</span>
+              Plant the Quran<br />
+              <span className="text-islamic-400">in Their Hearts Early</span>
             </h2>
             <div className="space-y-4 text-gray-600 leading-relaxed">
               <p>
-                Welcome to the Noor Al-Quran School — providing comprehensive Quran education for kids and adults in our community. Our programs combine memorization (Hifz), recitation (Tajweed), and Islamic studies.
+                Imagine your child standing on the Day of Judgment, placing a crown of light on your head — the crown gifted to the parents of a hafidh. That is the promise of the Quran. It begins with a single class, a single teacher, a single step.
               </p>
               <p>
-                Led by our dedicated Imam, Sheikh Mahmud Iddrisu, the school serves students of all ages and backgrounds. Whether you&apos;re beginning your journey or working toward completing your Hifz, there&apos;s a place for you here.
+                The Noor Al-Quran School at ICL offers structured Hifz, Tajweed, and Islamic studies for children and adults — led with patience and love by Imam Sheikh Mahmud Iddrisu. You don&apos;t have to send your child far for this. It&apos;s right here in Laveen.
               </p>
             </div>
 
@@ -85,7 +85,7 @@ export default function AboutSection() {
                 href="/education"
                 className="inline-block bg-islamic-700 hover:bg-islamic-600 text-white font-cinzel font-bold px-8 py-4 rounded-full transition-colors"
               >
-                Learn More →
+                Enroll Today →
               </a>
             </div>
           </div>

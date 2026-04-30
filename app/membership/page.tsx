@@ -15,12 +15,12 @@ const tiers = [
     icon: "🌱",
     title: "General Member",
     price: "Free",
-    desc: "For all community members who regularly attend ICL.",
+    desc: "Every Muslim who calls Laveen home is welcome here — no fee, no barrier, no conditions.",
     benefits: [
       "Voting rights at community meetings",
       "Access to all programs and events",
-      "Community newsletter",
-      "Prayer times updates",
+      "Community newsletter & announcements",
+      "Prayer times and iqama updates",
     ],
     cta: "Register Free",
     highlight: false,
@@ -29,13 +29,13 @@ const tiers = [
     icon: "⭐",
     title: "Supporting Member",
     price: "$25+/mo",
-    desc: "For those who want to sustain the masjid with regular giving.",
+    desc: "For those who feel the weight of this masjid in their heart and want to carry part of it.",
     benefits: [
       "All General Member benefits",
-      "Monthly giving via Mohid",
-      "Masjid building fund priority updates",
-      "Recognition at annual dinner",
-      "Tax-deductible donations",
+      "Monthly sadaqah via Mohid",
+      "Priority building fund updates",
+      "Recognition at ICL annual dinner",
+      "Tax-deductible monthly giving",
     ],
     cta: "Become a Supporter",
     highlight: true,
@@ -44,13 +44,13 @@ const tiers = [
     icon: "🏗️",
     title: "Builder Member",
     price: "$100+/mo",
-    desc: "For those who want to lead the masjid construction effort.",
+    desc: "Lead the charge. Your generosity is what transforms a dream into four walls and a mihrab.",
     benefits: [
       "All Supporting Member benefits",
       "Named recognition on Masjid wall (insha'Allah)",
-      "Priority access to Islamic events",
+      "Priority access to ICL events",
       "Direct updates from the building committee",
-      "Sadaqah Jariyah for every dollar given",
+      "Ongoing sadaqah jariyah for every dollar given",
     ],
     cta: "Lead the Build",
     highlight: false,
@@ -60,19 +60,19 @@ const tiers = [
 const faqs = [
   {
     q: "Is ICL membership free?",
-    a: "Yes — General Membership is completely free. We welcome every Muslim family in the Laveen community. Financial tiers are for those who want to support the masjid with regular giving.",
+    a: "Yes — General Membership is completely free. We never want cost to be a reason someone feels excluded from their masjid. Financial tiers exist for those who want to actively sustain and grow ICL.",
   },
   {
     q: "Are my donations tax-deductible?",
-    a: "Yes. ICL is a registered nonprofit organization. All donations through Mohid come with an email receipt that can be used for tax purposes.",
+    a: "Yes. ICL is a registered nonprofit organization. All donations through Mohid come with an instant email receipt that can be used for tax purposes at year-end.",
   },
   {
     q: "What happens after I register?",
-    a: "Our team will reach out within a few days to welcome you, answer any questions, and share information about upcoming programs and events.",
+    a: "Our team will personally reach out within a few days to welcome you, share program schedules, and answer any questions. You are joining a family — and we want you to feel that from day one.",
   },
   {
-    q: "Can non-Muslims participate in ICL programs?",
-    a: "Many of our community events are open to neighbors and friends of all backgrounds. Interfaith dialogue and community service are part of our values.",
+    q: "Can non-Muslims visit or attend events?",
+    a: "Many of our community events and outreach programs are open to neighbors of all backgrounds. Islam calls us to be a mercy to all people, and we take that seriously.",
   },
 ];
 
@@ -81,9 +81,9 @@ export default function MembershipPage() {
     <>
       <PageHero
         badge="Join ICL"
-        title="Become a"
-        titleHighlight="Member"
-        subtitle="Your membership strengthens the Muslim community of Laveen and helps us build a permanent home for future generations."
+        title="You Already Belong —"
+        titleHighlight="Make It Official"
+        subtitle="The masjid is everyone's. But when you register as a member, you say: 'This is my community, and I am committed to it.' Join the ICL family today."
         arabicText="وَتَعَاوَنُوا عَلَى الْبِرِّ وَالتَّقْوَىٰ"
       />
 
@@ -92,9 +92,9 @@ export default function MembershipPage() {
         <div className="max-w-7xl mx-auto px-4">
           <SectionTitle
             badge="Membership Tiers"
-            title="Choose Your"
-            titleHighlight="Level"
-            subtitle="All are welcome at ICL. Choose the level of involvement that works for you."
+            title="Choose How You"
+            titleHighlight="Want to Contribute"
+            subtitle="Whether you give your time, your du'a, or your wealth — every level of commitment strengthens this community."
           />
 
           <div className="grid md:grid-cols-3 gap-6 mb-10">
@@ -177,7 +177,7 @@ export default function MembershipPage() {
             badge="Free Registration"
             title="Register as a"
             titleHighlight="Member"
-            subtitle="Fill in the form below and our team will welcome you to the ICL family."
+            subtitle="Takes two minutes. Means the world to us — and to the future of this masjid."
           />
           <div data-aos="fade-up">
             <MembershipForm />

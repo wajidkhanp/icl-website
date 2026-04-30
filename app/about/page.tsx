@@ -15,65 +15,65 @@ const values = [
   {
     icon: "🕌",
     title: "Worship",
-    desc: "Establishing and maintaining daily congregational prayers as the cornerstone of our community life.",
+    desc: "Five prayers a day anchor our community. The masjid doors open before Fajr and close after Isha — because the remembrance of Allah is the heart of everything we do.",
   },
   {
     icon: "📖",
     title: "Education",
-    desc: "Nurturing love of the Quran and Islamic knowledge through the Noor Al-Quran School and weekly halaqas.",
+    desc: "We believe every Muslim should know their deen. Through the Noor Al-Quran School, Tafseer halaqas, and weekly circles of knowledge, we make learning accessible to all.",
   },
   {
     icon: "🤝",
     title: "Community",
-    desc: "Building strong bonds between Muslim families in Laveen through shared worship, events, and support.",
+    desc: "The Prophet ﷺ said the believers are like one body. We live that — showing up for each other in celebration, in hardship, and in everyday life.",
   },
   {
     icon: "💚",
     title: "Service",
-    desc: "Giving back to the wider Laveen community through charitable work, outreach, and social services.",
+    desc: "Islam is not only between you and Allah — it extends to your neighbor, your city, and the stranger who needs help. We serve the wider Laveen community with open hands.",
   },
   {
     icon: "🌙",
     title: "Integrity",
-    desc: "Operating with transparency, accountability, and Islamic ethics in all of our affairs.",
+    desc: "Honesty and accountability are non-negotiable. We operate with full transparency in our finances, our governance, and our dealings with every member of this community.",
   },
   {
     icon: "⭐",
     title: "Youth",
-    desc: "Investing in the next generation of Muslim leaders through dedicated youth programs and mentorship.",
+    desc: "Our young people carry the amanah of this ummah forward. We invest in them not just as future leaders — but as present Muslims who matter right now.",
   },
 ];
 
 const timeline = [
   {
     year: "2020",
-    title: "ICL Founded",
-    desc: "A small group of Muslim families in Laveen came together to establish regular prayers and programs for the community.",
+    title: "ICL is Founded",
+    desc: "A handful of Muslim families in Laveen came together with a shared longing — they needed a masjid close to home. With sincerity and du'a, the Islamic Center of Laveen was born.",
   },
   {
     year: "2021",
-    title: "Programs Launch",
-    desc: "The Noor Al-Quran School, weekly halaqas, and youth programs officially launched under Imam Sheikh Mahmud Iddrisu.",
+    title: "Programs Come Alive",
+    desc: "The Noor Al-Quran School opened its doors, halaqas began filling with students, and the youth found their Saturday-night community. Alhamdulillah — the seeds were growing.",
   },
   {
     year: "2022",
-    title: "Growing Community",
-    desc: "Membership grew to serve dozens of families. Jumu'ah prayers expanded to two shifts to accommodate the community.",
+    title: "The Community Grows",
+    desc: "Word spread. Families drove from across the West Valley to find what ICL offered — real community, genuine Islamic education, and a Jumu'ah that felt like home. Two shifts were needed.",
   },
   {
     year: "2023",
-    title: "Building Campaign",
-    desc: "Launched the permanent masjid building fund campaign on Mohid. Community rallied with generous contributions.",
+    title: "The Building Campaign Begins",
+    desc: "We launched our permanent masjid building fund. The community responded with incredible generosity — proof that when the ummah unites for Allah, nothing is impossible.",
   },
   {
     year: "2024",
-    title: "Planning & Design",
-    desc: "Architectural planning underway for a purpose-built masjid facility in Laveen Village.",
+    title: "Design & Planning",
+    desc: "Architectural vision for a beautiful, purpose-built masjid in Laveen. Every corner designed for worship, learning, and gathering. The blueprint of our dream.",
   },
   {
     year: "Today",
-    title: "Looking Forward",
-    desc: "Continuing to serve, grow, and build — working toward a permanent masjid that will serve generations to come.",
+    title: "The Journey Continues",
+    desc: "We are building — in faith, in community, and soon, in brick and mortar. The masjid of tomorrow is being built by the hearts of today. Will yours be among them?",
   },
 ];
 
@@ -84,7 +84,7 @@ export default function AboutPage() {
         badge="About ICL"
         title="More Than a Masjid —"
         titleHighlight="We Are Family"
-        subtitle="The Islamic Center of Laveen is a sanctuary of faith, learning, and community for Muslim families in the Laveen area."
+        subtitle="The Islamic Center of Laveen was built on a simple belief: every Muslim family in Laveen deserves a place to pray, to learn, and to belong."
         arabicText="وَاعْتَصِمُوا بِحَبْلِ اللَّهِ جَمِيعًا وَلَا تَفَرَّقُوا"
       />
 
@@ -101,7 +101,7 @@ export default function AboutPage() {
                 <div className="text-4xl mb-4">🎯</div>
                 <h2 className="font-cinzel font-bold text-2xl mb-4">Our Mission</h2>
                 <p className="text-islamic-100 leading-relaxed text-lg">
-                  To provide a welcoming, inclusive space for worship, Quranic education, and community service — strengthening the iman of every Muslim family in Laveen while contributing positively to the broader community.
+                  To be a welcoming home for every Muslim — a place where iman is strengthened, the Quran is taught, and no one walks through the door and feels like a stranger. We serve the Muslim families of Laveen and, through them, the entire community around us.
                 </p>
               </div>
             </div>
@@ -114,7 +114,7 @@ export default function AboutPage() {
                 <div className="text-4xl mb-4">🌟</div>
                 <h2 className="font-cinzel font-bold text-2xl text-islamic-700 mb-4">Our Vision</h2>
                 <p className="text-gray-600 leading-relaxed text-lg">
-                  A permanent, purpose-built masjid in Laveen that serves as a landmark of faith — a place where the Muslim community prays together, children memorize the Quran, and families find belonging for generations to come.
+                  A permanent masjid in the heart of Laveen — where the adhan rings out five times a day, children memorize Quran in the shade of its halls, and generations of Muslim families find peace, purpose, and belonging. Insha&apos;Allah, this is what we are building.
                 </p>
               </div>
             </div>
@@ -140,23 +140,23 @@ export default function AboutPage() {
                 Our Story
               </span>
               <h2 className="font-cinzel font-bold text-3xl md:text-4xl text-islamic-700 mb-5 leading-tight">
-                A Community Built on<br />
-                <span className="text-islamic-400">Faith & Service</span>
+                Born from the Longing<br />
+                <span className="text-islamic-400">of Believing Hearts</span>
               </h2>
               <div className="space-y-4 text-gray-600 leading-relaxed">
                 <p>
-                  The Islamic Center of Laveen was born from a simple need: Muslim families in the Laveen area needed a nearby place to pray, gather, and raise their children with Islamic values.
+                  It began the way most great things begin — with a need and a handful of people willing to do something about it. Muslim families in Laveen were driving long distances just to pray Jumu'ah. They wanted their children to grow up knowing the Quran. They wanted neighbors who shared their values.
                 </p>
                 <p>
-                  What started as a small congregation has grown into a vibrant community with daily prayers, the Noor Al-Quran School, weekly halaqas, youth programs, and women&apos;s classes — all led by our dedicated Imam, Sheikh Mahmud Iddrisu.
+                  So in 2020, a small group came together and made du'a. They rented a space, rolled out the prayer rugs, and called the adhan. From that first congregation grew what you see today — a thriving Islamic center with daily prayers, a Quran school, halaqas for every age, and a community knit together by love of Allah.
                 </p>
                 <p className="italic border-l-4 border-gold-400 pl-4 text-gray-500">
-                  &quot;Be kind, for whenever kindness becomes part of something, it beautifies it.&quot;
+                  &quot;Whoever travels a path in search of knowledge, Allah will make easy for them a path to Paradise.&quot;
                   <br />
-                  <span className="text-gold-600 font-semibold not-italic text-sm">— Prophet Muhammad ﷺ</span>
+                  <span className="text-gold-600 font-semibold not-italic text-sm">— Prophet Muhammad ﷺ (Muslim)</span>
                 </p>
                 <p>
-                  Today, ICL serves dozens of families and continues to grow. We are actively working toward our most ambitious goal: building a permanent masjid that will serve Laveen&apos;s Muslim community for generations.
+                  We are still growing, still dreaming, still building — and every person who walks through our doors becomes part of that story. Including you.
                 </p>
               </div>
             </div>
@@ -171,7 +171,7 @@ export default function AboutPage() {
             badge="Our Journey"
             title="ICL"
             titleHighlight="Timeline"
-            subtitle="From a small prayer gathering to a thriving Islamic community center."
+            subtitle="From a small prayer gathering to a thriving Islamic community — every milestone is a sign of Allah's barakah."
           />
 
           <div className="relative">
@@ -208,7 +208,7 @@ export default function AboutPage() {
             badge="Our Values"
             title="What We"
             titleHighlight="Stand For"
-            subtitle="Six core values guide everything we do at the Islamic Center of Laveen."
+            subtitle="Six principles that guide every decision, every program, and every interaction at the Islamic Center of Laveen."
           />
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -250,7 +250,7 @@ export default function AboutPage() {
                 </h3>
                 <p className="text-islamic-500 font-semibold mb-4">Masjid Imam · Head of Education</p>
                 <p className="text-gray-600 leading-relaxed mb-5">
-                  Sheikh Mahmud Iddrisu leads the Islamic Center of Laveen as Imam, educator, and community guide. He leads all five daily prayers, delivers Jumu&apos;ah khutbahs, teaches at the Noor Al-Quran School, and conducts weekly halaqas for brothers, sisters, and youth.
+                  Sheikh Mahmud Iddrisu is the heart of ICL. He leads every prayer with care, delivers khutbahs that speak to where we live and who we are, and teaches the Quran to students of all ages with patience and love. For many families in Laveen, he is not just the Imam — he is a spiritual father.
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {["Quran Hifz", "Tafseer", "Tajweed", "Fiqh", "Seerah", "Islamic Studies"].map((tag) => (
@@ -269,17 +269,17 @@ export default function AboutPage() {
       <section className="py-16 bg-islamic-700">
         <div className="max-w-3xl mx-auto px-4 text-center" data-aos="fade-up">
           <h2 className="font-cinzel font-bold text-3xl text-white mb-4">
-            Join Our Community
+            This Is Your Community Too
           </h2>
           <p className="text-islamic-200 text-lg mb-8">
-            Whether you&apos;re new to Laveen or looking for a masjid to call home — you are always welcome at ICL.
+            Whether you&apos;re new to Laveen or have lived here for years — the doors of ICL are open for you. Come as you are. You are always welcome.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/membership"
               className="inline-block bg-white text-islamic-700 font-cinzel font-bold px-8 py-4 rounded-full hover:bg-islamic-50 transition-colors"
             >
-              Become a Member
+              Join the Family
             </Link>
             <a
               href={MOHID_DONATION_URL}

@@ -13,7 +13,7 @@ const campaigns = [
   {
     icon: "🕌",
     title: "General Fund",
-    desc: "Covers daily masjid operations, utilities, cleaning, maintenance, and essential running costs.",
+    desc: "The electricity that keeps the lights on for Fajr. The water for wudu. The space where du'as are made. Your general donation keeps this masjid alive every single day.",
     color: "border-islamic-300",
     badge: "Always Open",
     badgeColor: "bg-islamic-100 text-islamic-700",
@@ -21,7 +21,7 @@ const campaigns = [
   {
     icon: "🏗️",
     title: "Building Fund",
-    desc: "Help us construct a permanent, purpose-built masjid facility for the Muslim community in Laveen.",
+    desc: "You have the chance to be among those who build a house of Allah. A permanent masjid for Laveen — so the adhan rings out long after we are gone.",
     color: "border-gold-400",
     badge: "Priority",
     badgeColor: "bg-gold-100 text-gold-700",
@@ -29,7 +29,7 @@ const campaigns = [
   {
     icon: "🌙",
     title: "Zakat",
-    desc: "Fulfill your obligatory annual Zakat. Distributed to eligible recipients in the community as per Islamic guidelines.",
+    desc: "Purify your wealth and fulfil your obligation with trust. ICL distributes Zakat to eligible families in the community with care, accountability, and Islamic integrity.",
     color: "border-islamic-300",
     badge: "Obligatory",
     badgeColor: "bg-islamic-100 text-islamic-700",
@@ -37,7 +37,7 @@ const campaigns = [
   {
     icon: "💚",
     title: "Sadaqah",
-    desc: "Voluntary charity supporting education programs, youth activities, community events, and those in need.",
+    desc: "A meal for a family in need. A Quran for a student. A scholarship for a child who deserves to memorize the Book of Allah. Your sadaqah reaches further than you know.",
     color: "border-islamic-300",
     badge: "Ongoing",
     badgeColor: "bg-islamic-100 text-islamic-700",
@@ -45,15 +45,15 @@ const campaigns = [
   {
     icon: "📖",
     title: "Education Fund",
-    desc: "Fund the Noor Al-Quran School — teacher salaries, school supplies, and scholarship assistance for families.",
+    desc: "Fund the teachers who pour knowledge into young hearts. Help us keep tuition free or affordable for every family who wants their child to love the Quran.",
     color: "border-islamic-300",
-    badge: "New",
+    badge: "Education",
     badgeColor: "bg-blue-100 text-blue-700",
   },
   {
     icon: "🤝",
     title: "Community Services",
-    desc: "Support outreach programs, food drives, youth sports, and interfaith community events.",
+    desc: "Food drives, youth programs, outreach events — we serve the broader Laveen community because Islam calls us to be a mercy to those around us.",
     color: "border-islamic-300",
     badge: "Community",
     badgeColor: "bg-purple-100 text-purple-700",
@@ -61,22 +61,22 @@ const campaigns = [
 ];
 
 const howToSteps = [
-  { step: "1", title: "Choose a Campaign", desc: "Select from General Fund, Zakat, Sadaqah, or Building Fund." },
-  { step: "2", title: "Click Donate", desc: "You'll be securely redirected to our Mohid payment portal." },
-  { step: "3", title: "Enter Amount", desc: "Choose a one-time or recurring monthly donation amount." },
-  { step: "4", title: "Receive Receipt", desc: "Get an email receipt for your tax-deductible donation." },
+  { step: "1", title: "Choose a Cause", desc: "Give where your heart moves you — masjid operations, building, Zakat, education, or community services." },
+  { step: "2", title: "Click Donate", desc: "You'll be securely redirected to Mohid — our trusted, encrypted payment portal." },
+  { step: "3", title: "Set Your Amount", desc: "Give once or set up a recurring monthly sadaqah — even a small amount, consistently, is beloved to Allah." },
+  { step: "4", title: "Receive Your Receipt", desc: "An instant tax-deductible receipt lands in your inbox. Your reward is recorded with Allah." },
 ];
 
 const verses = [
   {
     arabic: "مَّثَلُ الَّذِينَ يُنفِقُونَ أَمْوَالَهُمْ فِي سَبِيلِ اللَّهِ كَمَثَلِ حَبَّةٍ أَنبَتَتْ سَبْعَ سَنَابِلَ",
-    english: "The example of those who spend their wealth in the way of Allah is like a seed which grows seven ears...",
+    english: "The example of those who spend their wealth in the way of Allah is like a seed which grows seven ears — in each ear, a hundred grains. And Allah multiplies for whom He wills.",
     ref: "Quran 2:261",
   },
   {
-    arabic: "إِنَّ الَّذِينَ آمَنُواْ وَعَمِلُواْ الصَّالِحَاتِ وَأَقَامُواْ الصَّلاَةَ وَآتَوُاْ الزَّكَاةَ لَهُمْ أَجْرُهُمْ عِندَ رَبِّهِمْ",
-    english: "Those who believe, do good works, and are constant in prayer and dispense charity — shall have their reward with their Lord.",
-    ref: "Quran 2:277",
+    arabic: "لَن تَنَالُوا الْبِرَّ حَتَّىٰ تُنفِقُوا مِمَّا تُحِبُّونَ",
+    english: "You will never attain righteousness until you spend from that which you love most. And whatever you spend — Allah knows it well.",
+    ref: "Quran 3:92",
   },
 ];
 
@@ -85,9 +85,9 @@ export default function DonatePage() {
     <>
       <PageHero
         badge="Give for the Sake of Allah"
-        title="Donate to"
-        titleHighlight="ICL"
-        subtitle="Every dollar you give is an investment in your akhirah. Support your masjid, your community, and your deen."
+        title="Your Donation Is"
+        titleHighlight="Sadaqah Jariyah"
+        subtitle="When you give to ICL, your reward does not end here. It flows into every prayer made in this masjid, every child who memorizes Quran, every family lifted by this community."
         arabicText="وَأَنفِقُوا فِي سَبِيلِ اللَّهِ"
       />
 
@@ -115,7 +115,7 @@ export default function DonatePage() {
             badge="Donation Campaigns"
             title="Choose Where"
             titleHighlight="to Give"
-            subtitle="All donations are processed securely through Mohid and are tax-deductible."
+            subtitle="Every cause is dear. Give where your heart moves — all donations are tax-deductible and processed securely through Mohid."
           />
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -152,7 +152,7 @@ export default function DonatePage() {
               rel="noopener noreferrer"
               className="inline-block bg-islamic-700 hover:bg-islamic-600 text-white font-cinzel font-bold text-lg px-14 py-5 rounded-full shadow-xl shadow-islamic-700/30 transition-all hover:shadow-2xl"
             >
-              Donate via Mohid
+              Give for the Sake of Allah →
             </a>
             <p className="text-gray-400 text-sm mt-3">Secure · Instant receipt · Tax-deductible</p>
           </div>
@@ -166,7 +166,7 @@ export default function DonatePage() {
             badge="Simple Process"
             title="How to"
             titleHighlight="Donate"
-            subtitle="Donating to ICL is simple, secure, and takes less than 2 minutes."
+            subtitle="It takes less than 2 minutes. Your intention makes it an act of worship."
           />
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -187,9 +187,9 @@ export default function DonatePage() {
       <section className="py-14 bg-islamic-700">
         <div className="max-w-3xl mx-auto px-4 text-center" data-aos="fade-up">
           <p className="font-cinzel text-gold-400 text-2xl mb-3 arabic-text">صَدَقَةٌ جَارِيَة</p>
-          <h2 className="font-cinzel font-bold text-3xl text-white mb-4">Sadaqah Jariyah</h2>
+          <h2 className="font-cinzel font-bold text-3xl text-white mb-4">What Will You Leave Behind?</h2>
           <p className="text-islamic-200 text-lg leading-relaxed mb-6">
-            When you donate to build the masjid, fund education, or dig a well — your reward continues flowing even after you leave this world. Make an investment in your akhirah today.
+            The Prophet ﷺ said that when a person dies, three things remain: a continuous charity, knowledge that benefits others, or a righteous child who prays for them. Building this masjid. Funding this school. These are your ongoing gifts — living on long after your last breath, insha&apos;Allah.
           </p>
           <a
             href={MOHID_DONATION_URL}
@@ -197,7 +197,7 @@ export default function DonatePage() {
             rel="noopener noreferrer"
             className="inline-block bg-white text-islamic-700 font-cinzel font-bold px-10 py-4 rounded-full hover:bg-islamic-50 transition-colors"
           >
-            Give Sadaqah Jariyah
+            Leave Your Sadaqah Jariyah
           </a>
         </div>
       </section>

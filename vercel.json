@@ -1,0 +1,11 @@
+{
+  "framework": "nextjs",
+  "buildCommand": "npm run build",
+  "devCommand": "npm run dev",
+  "installCommand": "npm install",
+  "env": {
+    "RESEND_API_KEY": "@resend-api-key",
+    "CONTACT_TO_EMAIL": "@contact-to-email",
+    "CONTACT_FROM_EMAIL": "@contact-from-email"
+  }
+}

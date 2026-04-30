@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/ui/PageHero";
+import ContactForm from "@/components/contact/ContactForm";
 import { MASJID_ADDRESS, MASJID_PHONE, MASJID_EMAIL } from "@/lib/iqama-config";
 
 export const metadata: Metadata = {
@@ -98,78 +99,7 @@ export default function ContactPage() {
             {/* Contact form */}
             <div data-aos="fade-left">
               <h2 className="font-cinzel font-bold text-2xl text-islamic-700 mb-5">Send a Message</h2>
-              <form
-                action={`mailto:${MASJID_EMAIL}`}
-                method="get"
-                encType="text/plain"
-                className="space-y-4"
-              >
-                <div className="grid sm:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-1.5">First Name</label>
-                    <input
-                      type="text"
-                      name="name"
-                      required
-                      placeholder="Ahmed"
-                      className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-islamic-400 focus:ring-2 focus:ring-islamic-100 transition-colors"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-1.5">Last Name</label>
-                    <input
-                      type="text"
-                      name="lastname"
-                      placeholder="Khan"
-                      className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-islamic-400 focus:ring-2 focus:ring-islamic-100 transition-colors"
-                    />
-                  </div>
-                </div>
-                <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-1.5">Email</label>
-                  <input
-                    type="email"
-                    name="email"
-                    required
-                    placeholder="ahmed@example.com"
-                    className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-islamic-400 focus:ring-2 focus:ring-islamic-100 transition-colors"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-1.5">Subject</label>
-                  <select
-                    name="subject"
-                    className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-islamic-400 focus:ring-2 focus:ring-islamic-100 transition-colors bg-white"
-                  >
-                    <option>General Inquiry</option>
-                    <option>School Enrollment</option>
-                    <option>Donation Question</option>
-                    <option>Membership</option>
-                    <option>Volunteer</option>
-                    <option>Other</option>
-                  </select>
-                </div>
-                <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-1.5">Message</label>
-                  <textarea
-                    name="body"
-                    required
-                    rows={5}
-                    placeholder="Assalamu Alaikum, I would like to ask about..."
-                    className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-islamic-400 focus:ring-2 focus:ring-islamic-100 transition-colors resize-none"
-                  />
-                </div>
-                <button
-                  type="submit"
-                  className="w-full bg-islamic-700 hover:bg-islamic-600 text-white font-cinzel font-bold py-4 rounded-xl transition-colors shadow-sm"
-                >
-                  Send Message
-                </button>
-                <p className="text-xs text-gray-400 text-center">
-                  This opens your email client. Alternatively, email us directly at{" "}
-                  <a href={`mailto:${MASJID_EMAIL}`} className="text-islamic-600 underline">{MASJID_EMAIL}</a>
-                </p>
-              </form>
+              <ContactForm />
             </div>
           </div>
         </div>

@@ -117,9 +117,9 @@ export default function HeroSlider() {
           }`}
         >
           {/* Bismillah */}
-          <p className="text-gold-400 text-xl mb-6 font-cinzel arabic-text">
+          <h2 className="text-gold-400 text-3xl md:text-4xl font-bold mb-6 font-cinzel arabic-text text-center w-full">
             بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ
-          </p>
+          </h2>
 
           {/* Title */}
           <h1 className="font-cinzel font-bold text-4xl md:text-6xl text-white leading-tight mb-6">

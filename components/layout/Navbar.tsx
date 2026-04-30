@@ -26,6 +26,7 @@ export default function Navbar() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 px-4 md:px-6 py-3">
+      {/* Pill bar */}
       <div
         className={`max-w-7xl mx-auto rounded-full transition-all duration-300 px-4 py-2 ${
           scrolled
@@ -77,28 +78,39 @@ export default function Navbar() {
             className="lg:hidden p-2 rounded-lg text-islamic-700"
             aria-label="Toggle menu"
           >
-            <span className="block w-5 h-0.5 bg-current mb-1 transition-all" />
-            <span className="block w-5 h-0.5 bg-current mb-1 transition-all" />
-            <span className="block w-5 h-0.5 bg-current transition-all" />
+            {menuOpen ? (
+              <>
+                <span className="block w-5 h-0.5 bg-current rotate-45 translate-y-[3px]" />
+                <span className="block w-5 h-0.5 bg-current -rotate-45" />
+              </>
+            ) : (
+              <>
+                <span className="block w-5 h-0.5 bg-current mb-1" />
+                <span className="block w-5 h-0.5 bg-current mb-1" />
+                <span className="block w-5 h-0.5 bg-current" />
+              </>
+            )}
           </button>
         </div>
+      </div>
 
-        {/* Mobile menu */}
-        {menuOpen && (
-          <nav className="lg:hidden mt-3 pb-3 border-t border-islamic-100 pt-3 flex flex-col gap-3">
+      {/* Mobile dropdown — separate from the pill */}
+      {menuOpen && (
+        <div className="lg:hidden max-w-7xl mx-auto mt-2">
+          <nav className="bg-white/95 backdrop-blur-md rounded-2xl shadow-xl shadow-islamic-900/10 border border-islamic-100 px-4 py-4 flex flex-col gap-1">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setMenuOpen(false)}
-                className="font-cinzel text-sm font-semibold text-gray-700 hover:text-islamic-600 px-2 transition-colors"
+                className="font-cinzel text-sm font-semibold text-gray-700 hover:text-islamic-600 hover:bg-islamic-50 px-3 py-3 rounded-xl transition-colors"
               >
                 {link.label}
               </Link>
             ))}
           </nav>
-        )}
-      </div>
+        </div>
+      )}
     </header>
   );
 }

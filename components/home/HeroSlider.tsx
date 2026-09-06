@@ -15,7 +15,7 @@ const slides = [
     ctaLink: MOHID_DONATION_URL,
     secondaryCta: "Prayer Times",
     secondaryCtaLink: "/prayer-times",
-    image: "https://www.islamiccenteroflaveen.org/masjid-pics/slide1.jpeg",
+    image: "/masjidICL1.jpg",
   },
   {
     titleStart: "Every Dollar You Give",

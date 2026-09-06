@@ -1,24 +1,20 @@
-"use client";
-
-import { useState } from "react";
-
 export default function AnnouncementBanner({ announcement }: { announcement: string }) {
-  const [paused, setPaused] = useState(false);
   return (
-    <div className="bg-islamic-700 text-white py-2 overflow-hidden">
-      <div className="flex items-center">
-        <span className="shrink-0 bg-islamic-900 text-gold-400 font-semibold text-sm px-4 py-1 z-10">
-          📢 Announcements
-        </span>
-        <div className="overflow-hidden flex-1 relative">
-          <p style={{ animationPlayState: paused ? "paused" : undefined }} className="ticker-content text-sm font-medium px-4">
+    <section className="border-y-2 border-gold-400 bg-gold-100 px-4 py-6 sm:py-7" aria-label="Community announcement">
+      <div className="mx-auto flex max-w-5xl items-center gap-4 sm:gap-6" data-aos="fade-up">
+        <div className="hidden h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-gold-400 text-2xl shadow-sm sm:flex" aria-hidden="true">
+          📢
+        </div>
+        <div className="min-w-0">
+          <div className="mb-1 flex items-center gap-2">
+            <span className="h-2 w-2 rounded-full bg-gold-600" aria-hidden="true" />
+            <p className="font-cinzel text-xs font-bold uppercase tracking-[0.18em] text-gold-700">Community Announcement</p>
+          </div>
+          <p className="max-w-4xl text-sm font-semibold leading-6 text-islamic-900 sm:text-base sm:leading-7">
             {announcement}
           </p>
         </div>
-        <button type="button" aria-label={paused ? "Resume announcements" : "Pause announcements"} aria-pressed={paused} onClick={() => setPaused((value) => !value)} className="shrink-0 px-3 py-1 text-sm">
-          {paused ? "Resume" : "Pause"}
-        </button>
       </div>
-    </div>
+    </section>
   );
 }

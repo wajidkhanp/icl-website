@@ -88,7 +88,7 @@ export default function MembershipPage() {
       />
 
       {/* Membership tiers */}
-      <section className="py-20 bg-white">
+      <section className="section-spacing bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <SectionTitle
             badge="Membership Tiers"
@@ -171,7 +171,7 @@ export default function MembershipPage() {
       </section>
 
       {/* Registration form */}
-      <section className="py-20 bg-islamic-50" id="register">
+      <section className="section-spacing bg-islamic-50" id="register">
         <div className="max-w-2xl mx-auto px-4">
           <SectionTitle
             badge="Free Registration"
@@ -186,7 +186,7 @@ export default function MembershipPage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-20 bg-white">
+      <section className="section-spacing bg-white">
         <div className="max-w-3xl mx-auto px-4">
           <SectionTitle
             badge="Questions"

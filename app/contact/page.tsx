@@ -51,7 +51,7 @@ export default function ContactPage() {
       />
 
       {/* Contact cards */}
-      <section className="py-16 bg-white">
+      <section className="section-spacing bg-white">
         <div className="max-w-5xl mx-auto px-4">
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-14" data-aos="fade-up">
             {contactCards.map((c) => (
@@ -72,7 +72,7 @@ export default function ContactPage() {
           </div>
 
           {/* Map + Form side by side */}
-          <div className="grid lg:grid-cols-2 gap-10">
+          <div className="grid lg:grid-cols-2 gap-6 md:gap-8">
             {/* Google Maps embed */}
             <div data-aos="fade-right">
               <h2 className="font-cinzel font-bold text-2xl text-islamic-700 mb-5">Find Us in Laveen</h2>
@@ -106,7 +106,7 @@ export default function ContactPage() {
       </section>
 
       {/* Masjid hours */}
-      <section className="py-14 bg-islamic-50">
+      <section className="section-spacing bg-islamic-50">
         <div className="max-w-3xl mx-auto px-4 text-center" data-aos="fade-up">
           <h2 className="font-cinzel font-bold text-2xl text-islamic-700 mb-2">Masjid Hours</h2>
           <p className="text-gray-500 text-sm mb-8">The masjid is open for every prayer, every day. Come early. Stay late. This is your home.</p>

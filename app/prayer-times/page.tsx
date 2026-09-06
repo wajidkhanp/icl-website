@@ -35,7 +35,7 @@ export default async function PrayerTimesPage() {
         arabicText="أَقِيمُوا الصَّلَاةَ"
       />
 
-      <section className="py-16 bg-white">
+      <section className="section-spacing bg-white">
         <div className="max-w-5xl mx-auto px-4">
 
           {/* Date header */}

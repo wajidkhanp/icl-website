@@ -2,10 +2,10 @@ import Image from "next/image";
 
 export default function AboutSection() {
   return (
-    <section className="py-20 bg-islamic-50">
-      <div className="max-w-7xl mx-auto px-4 space-y-20">
+    <section className="section-spacing bg-islamic-50">
+      <div className="max-w-7xl mx-auto px-4 space-y-10 md:space-y-12">
         {/* Community block */}
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="grid md:grid-cols-2 gap-6 md:gap-8 items-center">
           <div data-aos="fade-right">
             <Image
               src="https://www.islamiccenteroflaveen.org/masjid-pics/slide2.jpeg"
@@ -21,7 +21,7 @@ export default function AboutSection() {
             </span>
             <h2 className="font-cinzel font-bold text-3xl md:text-4xl text-islamic-700 mb-5 leading-tight">
               A Place Where Every<br />
-              <span className="text-islamic-400">Muslim Belongs</span>
+              <span className="text-islamic-600">Muslim Belongs</span>
             </h2>
             <div className="space-y-4 text-gray-600 leading-relaxed">
               <p>
@@ -48,14 +48,14 @@ export default function AboutSection() {
         </div>
 
         {/* Hifz School block */}
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="grid md:grid-cols-2 gap-6 md:gap-8 items-center">
           <div className="order-2 md:order-1" data-aos="fade-right">
             <span className="inline-block bg-islamic-100 text-islamic-700 font-cinzel font-semibold text-xs px-4 py-1.5 rounded-full uppercase tracking-wider mb-5">
               Islamic Education
             </span>
             <h2 className="font-cinzel font-bold text-3xl md:text-4xl text-islamic-700 mb-5 leading-tight">
               Plant the Quran<br />
-              <span className="text-islamic-400">in Their Hearts Early</span>
+              <span className="text-islamic-600">in Their Hearts Early</span>
             </h2>
             <div className="space-y-4 text-gray-600 leading-relaxed">
               <p>

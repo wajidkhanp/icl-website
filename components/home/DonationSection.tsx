@@ -29,7 +29,7 @@ const campaigns = [
 
 export default function DonationSection() {
   return (
-    <section className="py-20 bg-islamic-50 pattern-overlay" id="donate">
+    <section className="section-spacing bg-islamic-50 pattern-overlay" id="donate">
       <div className="max-w-7xl mx-auto px-4">
         {/* Quranic verse */}
         <div className="text-center mb-14" data-aos="fade-up">

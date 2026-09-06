@@ -25,8 +25,8 @@ const slides = [
       "The Prophet ﷺ said: whoever builds a masjid for Allah, Allah builds for him a house in Jannah. Help us raise these walls — your sadaqah jariyah will outlast you and intercede for you.",
     cta: "Build Our Masjid",
     ctaLink: MOHID_DONATION_URL,
-    secondaryCta: "See Progress",
-    secondaryCtaLink: "/construction",
+    secondaryCta: "Ways to Give",
+    secondaryCtaLink: "/donate",
     image: "https://www.islamiccenteroflaveen.org/masjid-pics/slide2.jpeg",
   },
   {
@@ -84,7 +84,7 @@ export default function HeroSlider() {
   const slide = slides[current];
 
   return (
-    <section aria-label="Community highlights" aria-roledescription="carousel" onFocusCapture={(event) => { if (!event.target.hasAttribute("data-rotation-control")) setPaused(true); }} className="relative min-h-screen flex items-center overflow-hidden">
+    <section aria-label="Community highlights" aria-roledescription="carousel" onFocusCapture={(event) => { if (!event.target.hasAttribute("data-rotation-control")) setPaused(true); }} className="relative flex items-center overflow-hidden">
       {/* Background images (all preloaded, only current visible) */}
       {slides.map((s, i) => (
         <div
@@ -105,28 +105,28 @@ export default function HeroSlider() {
       ))}
 
       {/* Deep green gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-islamic-950/95 via-islamic-900/80 to-islamic-800/50" />
+      <div className="absolute inset-0 bg-gradient-to-r from-islamic-950/90 via-islamic-900/75 to-islamic-700/35" />
 
       {/* Islamic geometric pattern overlay */}
       <div className="absolute inset-0 pattern-overlay opacity-30" />
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 py-32 pt-40">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-5 md:px-6 pt-24 md:pt-28 pb-24">
         <div className="max-w-3xl">
           {/* Bismillah */}
-          <h2 className="text-gold-400 text-3xl md:text-4xl font-bold mb-6 font-cinzel arabic-text text-center w-full">
+          <h2 className="text-gold-400 text-3xl md:text-4xl font-bold mb-4 font-cinzel arabic-text text-center w-full">
             بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ
           </h2>
 
           {/* Title */}
-          <h1 className="font-cinzel font-bold text-4xl md:text-6xl text-white leading-tight mb-6">
+          <h1 className="font-cinzel font-bold text-3xl sm:text-4xl lg:text-5xl text-white leading-tight mb-4">
             {slide.titleStart}{" "}
             <span className="text-islamic-400">{slide.titleHighlight}</span>{" "}
             {slide.titleEnd}
           </h1>
 
           {/* Subtitle */}
-          <p className="text-gray-200 text-lg md:text-xl leading-relaxed mb-10 max-w-2xl">
+          <p className="text-gray-200 text-lg md:text-xl leading-relaxed mb-6 max-w-2xl">
             {slide.subtitle}
           </p>
 
@@ -134,7 +134,7 @@ export default function HeroSlider() {
           <div className="flex flex-wrap gap-4">
             <a
               href={slide.ctaLink}
-              className="inline-block bg-islamic-500 hover:bg-islamic-400 text-white font-cinzel font-bold px-8 py-4 rounded-full transition-all duration-200 shadow-lg shadow-islamic-900/40 hover:shadow-xl"
+              className="inline-block bg-gold-400 hover:bg-gold-300 text-islamic-950 font-cinzel font-bold px-8 py-4 rounded-full transition-all duration-200 shadow-lg shadow-islamic-900/40 hover:shadow-xl"
             >
               {slide.cta}
             </a>

@@ -92,7 +92,7 @@ export default function DonatePage() {
       />
 
       {/* Quranic verses */}
-      <section className="py-14 bg-islamic-50">
+      <section className="section-spacing bg-islamic-50">
         <div className="max-w-5xl mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-6">
             {verses.map((v) => (
@@ -109,7 +109,7 @@ export default function DonatePage() {
       </section>
 
       {/* Campaign cards */}
-      <section className="py-20 bg-white">
+      <section className="section-spacing bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <SectionTitle
             badge="Donation Campaigns"
@@ -160,7 +160,7 @@ export default function DonatePage() {
       </section>
 
       {/* How to donate */}
-      <section className="py-20 bg-islamic-50">
+      <section className="section-spacing bg-islamic-50">
         <div className="max-w-5xl mx-auto px-4">
           <SectionTitle
             badge="Simple Process"
@@ -184,7 +184,7 @@ export default function DonatePage() {
       </section>
 
       {/* Sadaqah Jariyah box */}
-      <section className="py-14 bg-islamic-700">
+      <section className="section-spacing bg-islamic-700">
         <div className="max-w-3xl mx-auto px-4 text-center" data-aos="fade-up">
           <p className="font-cinzel text-gold-400 text-2xl mb-3 arabic-text">صَدَقَةٌ جَارِيَة</p>
           <h2 className="font-cinzel font-bold text-3xl text-white mb-4">What Will You Leave Behind?</h2>

@@ -14,7 +14,7 @@ export default function PageHero({
   badge,
 }: PageHeroProps) {
   return (
-    <section className="relative bg-gradient-to-br from-islamic-950 via-islamic-900 to-islamic-700 py-24 pt-36 overflow-hidden">
+    <section className="relative bg-gradient-to-br from-islamic-900 via-islamic-700 to-islamic-500 pb-7 pt-24 md:pb-8 md:pt-28 overflow-hidden">
       {/* Geometric pattern overlay */}
       <div className="absolute inset-0 pattern-overlay opacity-25" />
 
@@ -33,14 +33,14 @@ export default function PageHero({
             {badge}
           </span>
         )}
-        <h1 className="font-cinzel font-bold text-4xl md:text-5xl lg:text-6xl text-white mb-4 leading-tight">
+        <h1 className="font-cinzel font-bold text-3xl md:text-4xl lg:text-5xl text-white mb-3 leading-tight">
           {title}
           {titleHighlight && (
-            <span className="text-islamic-400"> {titleHighlight}</span>
+            <span className="text-gold-300"> {titleHighlight}</span>
           )}
         </h1>
         {subtitle && (
-          <p className="text-islamic-200 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+          <p className="text-islamic-50 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
             {subtitle}
           </p>
         )}

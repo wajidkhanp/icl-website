@@ -60,7 +60,7 @@ export default function EventsPage() {
       />
 
       {/* Weekly programs */}
-      <section className="py-20 bg-white">
+      <section className="section-spacing bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <SectionTitle
             badge="Recurring Programs"
@@ -125,7 +125,7 @@ export default function EventsPage() {
       </section>
 
       {/* Jumu'ah section */}
-      <section className="py-20 bg-islamic-50">
+      <section className="section-spacing bg-islamic-50">
         <div className="max-w-5xl mx-auto px-4">
           <SectionTitle
             badge="Every Friday"
@@ -134,7 +134,7 @@ export default function EventsPage() {
             subtitle="The most important hour of the most blessed day of the week. Don't miss it."
           />
 
-          <div className="bg-gradient-to-br from-islamic-700 to-islamic-900 rounded-3xl p-10 text-white text-center relative overflow-hidden" data-aos="fade-up">
+          <div className="bg-gradient-to-br from-islamic-700 to-islamic-900 rounded-3xl p-6 md:p-8 text-white text-center relative overflow-hidden" data-aos="fade-up">
             <div className="absolute inset-0 pattern-overlay opacity-20" />
             <div className="relative z-10">
               <p className="font-cinzel text-gold-400 text-2xl mb-6 arabic-text">
@@ -161,7 +161,7 @@ export default function EventsPage() {
       </section>
 
       {/* Special events */}
-      <section className="py-16 bg-white">
+      <section className="section-spacing bg-white">
         <div className="max-w-5xl mx-auto px-4 text-center" data-aos="fade-up">
           <SectionTitle
             badge="Special Events"

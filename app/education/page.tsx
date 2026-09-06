@@ -65,9 +65,9 @@ export default function EducationPage() {
       />
 
       {/* School overview */}
-      <section className="py-20 bg-white">
+      <section className="section-spacing bg-white">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-14 items-center">
+          <div className="grid md:grid-cols-2 gap-6 md:gap-8 items-center">
             <div data-aos="fade-right">
               <Image
                 src="https://www.islamiccenteroflaveen.org/masjid-pics/quran.jpeg"
@@ -113,7 +113,7 @@ export default function EducationPage() {
       </section>
 
       {/* Programs */}
-      <section className="py-20 bg-islamic-50">
+      <section className="section-spacing bg-islamic-50">
         <div className="max-w-7xl mx-auto px-4">
           <SectionTitle
             badge="Programs Offered"
@@ -150,7 +150,7 @@ export default function EducationPage() {
       </section>
 
       {/* Curriculum */}
-      <section className="py-20 bg-white">
+      <section className="section-spacing bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <SectionTitle
             badge="Curriculum"
@@ -176,12 +176,12 @@ export default function EducationPage() {
       </section>
 
       {/* Imam profile */}
-      <section className="py-20 bg-islamic-50">
+      <section className="section-spacing bg-islamic-50">
         <div className="max-w-3xl mx-auto px-4 text-center" data-aos="fade-up">
           <span className="inline-block bg-islamic-100 text-islamic-700 font-cinzel font-semibold text-xs px-4 py-1.5 rounded-full uppercase tracking-wider mb-6">
             Our Imam & Teacher
           </span>
-          <div className="bg-white rounded-3xl p-10 shadow-sm border border-islamic-100">
+          <div className="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-islamic-100">
             <div className="w-24 h-24 bg-islamic-700 rounded-full flex items-center justify-center text-5xl mx-auto mb-6">
               🎓
             </div>
@@ -204,7 +204,7 @@ export default function EducationPage() {
       </section>
 
       {/* Enroll CTA */}
-      <section className="py-16 bg-islamic-700">
+      <section className="section-spacing bg-islamic-700">
         <div className="max-w-3xl mx-auto px-4 text-center" data-aos="fade-up">
           <h2 className="font-cinzel font-bold text-3xl md:text-4xl text-white mb-4">
             Don&apos;t Wait — Enroll Today

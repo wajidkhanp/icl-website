@@ -35,7 +35,7 @@ export default function PrayerTimesSection({
   }, [prayerData]);
 
   return (
-    <section className="py-16 bg-white" id="prayer-times">
+    <section className="section-spacing bg-white" id="prayer-times">
       <div className="max-w-7xl mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-10" data-aos="fade-up">

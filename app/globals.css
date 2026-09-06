@@ -1,26 +1,26 @@
 @import "tailwindcss";
 
 @theme inline {
-  /* ICL Brand — deep Islamic green + parrot green */
-  --color-islamic-50: #f0fdf4;
-  --color-islamic-100: #dcfce7;
-  --color-islamic-200: #bbf7d0;
-  --color-islamic-300: #86efac;
-  --color-islamic-400: #39c16c;
-  --color-islamic-500: #2d9946;
-  --color-islamic-600: #237a38;
-  --color-islamic-700: #1a5c2a;
-  --color-islamic-800: #154922;
-  --color-islamic-900: #0d2e15;
-  --color-islamic-950: #071810;
+  /* ICL Brand — emerald, fresh mint, and warm amber */
+  --color-islamic-50: #f2fcf8;
+  --color-islamic-100: #d8f6e9;
+  --color-islamic-200: #afeccd;
+  --color-islamic-300: #72dbb0;
+  --color-islamic-400: #2ed092;
+  --color-islamic-500: #0dbb7b;
+  --color-islamic-600: #078d67;
+  --color-islamic-700: #06705a;
+  --color-islamic-800: #075744;
+  --color-islamic-900: #064538;
+  --color-islamic-950: #032f28;
 
-  /* Gold accent */
-  --color-gold-100: #faf3d9;
-  --color-gold-300: #f5e4a0;
-  --color-gold-400: #e5c56a;
-  --color-gold-500: #c9a84c;
-  --color-gold-600: #a8872c;
-  --color-gold-700: #876b1f;
+  /* Warm amber accent */
+  --color-gold-100: #fff4d4;
+  --color-gold-300: #ffdc72;
+  --color-gold-400: #ffc247;
+  --color-gold-500: #f2a51e;
+  --color-gold-600: #b96d08;
+  --color-gold-700: #8f5008;
 
   /* Fonts */
   --font-cinzel: var(--font-cinzel-var), "Palatino Linotype", Georgia, serif;
@@ -50,7 +50,7 @@ body {
 
 /* Green gradient text */
 .gradient-text {
-  background: linear-gradient(135deg, #39c16c, #1a5c2a);
+  background: linear-gradient(135deg, #34d399, #06654e);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -104,4 +104,19 @@ html:not(.aos-enabled) [data-aos] {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+/* Shared rhythm keeps every content page compact and readable. */
+.section-spacing {
+  padding-block: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+::selection {
+  background: var(--color-gold-300);
+  color: var(--color-islamic-950);
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-islamic-500);
+  outline-offset: 4px;
 }

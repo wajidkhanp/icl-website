@@ -10,7 +10,6 @@ const navLinks = [
   { href: "/prayer-times", label: "Prayer Times" },
   { href: "/education", label: "Education" },
   { href: "/events", label: "Events" },
-  { href: "/construction", label: "Construction" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -31,10 +30,10 @@ export default function Navbar() {
         className={`max-w-7xl mx-auto rounded-full transition-all duration-300 px-4 py-2 ${
           scrolled
             ? "bg-white/90 backdrop-blur-md shadow-lg shadow-islamic-900/10"
-            : "bg-white/80 backdrop-blur-sm"
+            : "bg-white/95 backdrop-blur-sm shadow-sm"
         }`}
       >
-        <div className="flex items-center justify-between gap-4">
+        <div className="flex items-center justify-between gap-4 lg:grid lg:grid-cols-[1fr_auto_1fr]">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 shrink-0">
             <Image
@@ -50,12 +49,12 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop nav */}
-          <nav className="hidden lg:flex items-center gap-6">
+          <nav className="hidden lg:flex items-center justify-center gap-5 justify-self-center">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="font-cinzel text-sm font-semibold text-gray-700 hover:text-islamic-600 transition-colors"
+                className="font-sans text-sm font-semibold text-gray-700 hover:text-islamic-600 transition-colors"
               >
                 {link.label}
               </Link>
@@ -67,7 +66,7 @@ export default function Navbar() {
             href={MOHID_DONATION_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="shrink-0 bg-islamic-700 hover:bg-islamic-600 text-white font-cinzel font-bold text-sm px-5 py-2 rounded-full transition-colors shadow-sm"
+            className="inline-flex h-11 min-w-28 shrink-0 items-center justify-center rounded-full bg-gold-400 px-5 text-center font-sans text-sm font-extrabold leading-none text-islamic-950 shadow-sm transition-colors hover:bg-gold-300 lg:justify-self-end"
           >
             Donate
           </a>
@@ -75,7 +74,7 @@ export default function Navbar() {
           {/* Mobile hamburger */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="lg:hidden p-2 rounded-lg text-islamic-700"
+            className="lg:hidden shrink-0 p-2 rounded-lg text-islamic-700"
             aria-label="Toggle menu"
             aria-expanded={menuOpen}
             aria-controls="mobile-navigation"
@@ -105,7 +104,7 @@ export default function Navbar() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setMenuOpen(false)}
-                className="font-cinzel text-sm font-semibold text-gray-700 hover:text-islamic-600 hover:bg-islamic-50 px-3 py-3 rounded-xl transition-colors"
+                className="font-sans text-sm font-semibold text-gray-700 hover:text-islamic-600 hover:bg-islamic-50 px-3 py-3 rounded-xl transition-colors"
               >
                 {link.label}
               </Link>

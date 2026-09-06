@@ -13,7 +13,6 @@ const quickLinks = [
   { href: "/about", label: "About Us" },
   { href: "/education", label: "Noor Al-Quran School" },
   { href: "/events", label: "Events" },
-  { href: "/construction", label: "Construction Updates" },
 ];
 
 const importantLinks = [
@@ -45,7 +44,7 @@ export default function Footer() {
       </div>
 
       {/* Main footer */}
-      <div className="max-w-7xl mx-auto px-4 py-12 grid md:grid-cols-3 gap-10">
+      <div className="max-w-7xl mx-auto px-4 py-12 grid md:grid-cols-3 gap-6 md:gap-8">
         {/* Contact */}
         <div>
           <h3 className="font-cinzel font-bold text-lg text-islamic-300 mb-4">

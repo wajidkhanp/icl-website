@@ -9,7 +9,6 @@ const SUBJECTS = [
   "Donation Question",
   "Membership",
   "Volunteer",
-  "Construction Update",
   "Event Information",
   "Other",
 ];

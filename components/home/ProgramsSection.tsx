@@ -37,7 +37,7 @@ const IMAM_NAME = "Sheikh Mahmud Iddrisu";
 
 export default function ProgramsSection() {
   return (
-    <section className="py-20 bg-white" id="programs">
+    <section className="section-spacing bg-white" id="programs">
       <div className="max-w-7xl mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-14" data-aos="fade-up">
@@ -53,7 +53,7 @@ export default function ProgramsSection() {
         </div>
 
         {/* Program cards */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
           {programs.map((p, i) => (
             <div
               key={p.title}

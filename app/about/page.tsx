@@ -89,12 +89,12 @@ export default function AboutPage() {
       />
 
       {/* Mission & Vision */}
-      <section className="py-20 bg-white">
+      <section className="section-spacing bg-white">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-10">
+          <div className="grid md:grid-cols-2 gap-6 md:gap-8">
             <div
               data-aos="fade-right"
-              className="bg-islamic-700 rounded-3xl p-10 text-white relative overflow-hidden"
+              className="bg-islamic-700 rounded-3xl p-6 md:p-8 text-white relative overflow-hidden"
             >
               <div className="absolute inset-0 pattern-overlay opacity-20" />
               <div className="relative z-10">
@@ -107,7 +107,7 @@ export default function AboutPage() {
             </div>
             <div
               data-aos="fade-left"
-              className="bg-islamic-50 border-2 border-islamic-200 rounded-3xl p-10 relative overflow-hidden"
+              className="bg-islamic-50 border-2 border-islamic-200 rounded-3xl p-6 md:p-8 relative overflow-hidden"
             >
               <div className="absolute inset-0 pattern-overlay opacity-10" />
               <div className="relative z-10">
@@ -123,9 +123,9 @@ export default function AboutPage() {
       </section>
 
       {/* Our story */}
-      <section className="py-20 bg-islamic-50">
+      <section className="section-spacing bg-islamic-50">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-14 items-center">
+          <div className="grid md:grid-cols-2 gap-6 md:gap-8 items-center">
             <div data-aos="fade-right">
               <Image
                 src="https://www.islamiccenteroflaveen.org/masjid-pics/slide1.jpeg"
@@ -165,7 +165,7 @@ export default function AboutPage() {
       </section>
 
       {/* Timeline */}
-      <section className="py-20 bg-white">
+      <section className="section-spacing bg-white">
         <div className="max-w-4xl mx-auto px-4">
           <SectionTitle
             badge="Our Journey"
@@ -182,7 +182,7 @@ export default function AboutPage() {
                   key={item.year}
                   data-aos="fade-up"
                   data-aos-delay={i * 80}
-                  className="relative flex gap-6 md:gap-10"
+                  className="relative flex gap-6 md:gap-8"
                 >
                   <div className="relative z-10 shrink-0">
                     <div className="w-8 md:w-16 h-8 md:h-16 rounded-full bg-islamic-700 flex items-center justify-center border-4 border-white shadow-md">
@@ -202,7 +202,7 @@ export default function AboutPage() {
       </section>
 
       {/* Values */}
-      <section className="py-20 bg-islamic-50">
+      <section className="section-spacing bg-islamic-50">
         <div className="max-w-7xl mx-auto px-4">
           <SectionTitle
             badge="Our Values"
@@ -229,7 +229,7 @@ export default function AboutPage() {
       </section>
 
       {/* Imam profile */}
-      <section className="py-20 bg-white">
+      <section className="section-spacing bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <SectionTitle
             badge="Leadership"
@@ -239,7 +239,7 @@ export default function AboutPage() {
           <div className="max-w-3xl mx-auto">
             <div
               data-aos="fade-up"
-              className="bg-islamic-50 rounded-3xl p-10 border border-islamic-100 flex flex-col md:flex-row gap-8 items-center"
+              className="bg-islamic-50 rounded-3xl p-6 md:p-8 border border-islamic-100 flex flex-col md:flex-row gap-8 items-center"
             >
               <div className="w-28 h-28 rounded-full bg-islamic-700 flex items-center justify-center text-6xl shrink-0 shadow-lg">
                 🎓
@@ -266,7 +266,7 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 bg-islamic-700">
+      <section className="section-spacing bg-islamic-700">
         <div className="max-w-3xl mx-auto px-4 text-center" data-aos="fade-up">
           <h2 className="font-cinzel font-bold text-3xl text-white mb-4">
             This Is Your Community Too

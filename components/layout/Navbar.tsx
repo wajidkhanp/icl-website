@@ -43,7 +43,7 @@ export default function Navbar() {
               height={48}
               className="rounded-full object-cover"
             />
-            <span className="block max-w-[9rem] whitespace-normal font-cinzel text-xs font-bold leading-tight text-islamic-800 sm:max-w-none sm:whitespace-nowrap sm:text-sm">
+            <span className="block shrink-0 whitespace-nowrap font-cinzel text-[11px] font-bold leading-tight text-islamic-800 sm:text-sm">
               Islamic Center of Laveen
             </span>
           </Link>

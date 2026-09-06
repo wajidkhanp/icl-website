@@ -8,7 +8,7 @@ export default function AboutSection() {
         <div className="grid md:grid-cols-2 gap-6 md:gap-8 items-center">
           <div data-aos="fade-right">
             <Image
-              src="/masjidICL1.jpg"
+              src="/masjidICL5.jpeg"
               alt="Islamic Center of Laveen Community"
               width={640}
               height={430}
@@ -91,7 +91,7 @@ export default function AboutSection() {
           </div>
           <div className="order-1 md:order-2" data-aos="fade-left">
             <Image
-              src="/masjidICL1.jpg"
+              src="/kschool3.png"
               alt="Noor Al-Quran Hifz School"
               width={640}
               height={430}

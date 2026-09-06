@@ -27,7 +27,7 @@ const slides = [
     ctaLink: MOHID_DONATION_URL,
     secondaryCta: "Ways to Give",
     secondaryCtaLink: "/donate",
-    image: "/masjidICL1.jpg",
+    image: "/masjidICL2.jpeg",
   },
   {
     titleStart: "Give Your Child",
@@ -39,7 +39,7 @@ const slides = [
     ctaLink: "/education",
     secondaryCta: "Our Programs",
     secondaryCtaLink: "/education",
-    image: "/masjidICL1.jpg",
+    image: "/masjidICL3.jpeg",
   },
   {
     titleStart: "You Don't Have to",
@@ -51,7 +51,7 @@ const slides = [
     ctaLink: "/membership",
     secondaryCta: "Contact Us",
     secondaryCtaLink: "/contact",
-    image: "/masjidICL1.jpg",
+    image: "/masjidICL4.jpeg",
   },
 ];
 

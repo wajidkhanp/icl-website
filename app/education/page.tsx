@@ -70,7 +70,7 @@ export default function EducationPage() {
           <div className="grid md:grid-cols-2 gap-6 md:gap-8 items-center">
             <div data-aos="fade-right">
               <Image
-                src="/masjidICL1.jpg"
+                src="/kschool1.jpeg"
                 alt="Noor Al-Quran School"
                 width={640}
                 height={430}

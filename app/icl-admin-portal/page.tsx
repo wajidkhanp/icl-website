@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function AdminPortalPage() {
   return (
-    <section className="section-spacing min-h-[70vh] bg-islamic-50">
+    <section className="section-spacing min-h-[70vh] bg-islamic-50 !pt-28 md:!pt-32">
       <div className="mx-auto max-w-5xl px-4">
         <AdminConsole />
       </div>

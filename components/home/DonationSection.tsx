@@ -1,4 +1,5 @@
 import { MOHID_DONATION_URL } from "@/lib/iqama-config";
+import ZelleCallout from "@/components/ui/ZelleCallout";
 
 const campaigns = [
   {
@@ -51,6 +52,10 @@ export default function DonationSection() {
               The masjid doors stay open because of people like you. Every act of giving — however small — is recorded by Allah and multiplied beyond what we can imagine.
             </p>
           </div>
+        </div>
+
+        <div className="mb-10">
+          <ZelleCallout />
         </div>
 
         {/* Campaign cards */}

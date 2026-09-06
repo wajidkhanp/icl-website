@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/ui/PageHero";
 import SectionTitle from "@/components/ui/SectionTitle";
+import ZelleCallout from "@/components/ui/ZelleCallout";
 import { MOHID_DONATION_URL } from "@/lib/iqama-config";
 
 export const metadata: Metadata = {
@@ -90,6 +91,10 @@ export default function DonatePage() {
         subtitle="When you give to ICL, your reward does not end here. It flows into every prayer made in this masjid, every child who memorizes Quran, every family lifted by this community."
         arabicText="وَأَنفِقُوا فِي سَبِيلِ اللَّهِ"
       />
+
+      <section className="bg-white px-4 pb-2 pt-6 sm:pt-8">
+        <ZelleCallout />
+      </section>
 
       {/* Quranic verses */}
       <section className="section-spacing bg-islamic-50">

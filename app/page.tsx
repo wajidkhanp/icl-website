@@ -20,7 +20,7 @@ export default async function Home() {
       <PrayerTimesRefresh date={getMasjidDate(now)} />
       <HeroSlider />
       <PrayerTimesSection prayerData={prayerData} iqamaTimes={content.iqamaTimes} jumuah={content.jumuah} />
-      <AnnouncementBanner announcement={content.announcement} />
+      <AnnouncementBanner announcements={content.announcements} />
       <DonationSection />
       <ProgramsSection />
       <AboutSection />

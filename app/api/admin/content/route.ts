@@ -23,13 +23,14 @@ export async function PUT(request: NextRequest) {
   }
 
   const values = [
-    content.announcement,
     content.weekendDhuhrNote,
     content.seasonalNote,
     ...Object.values(content.iqamaTimes),
     ...content.jumuah.flatMap((entry) => [entry?.time, entry?.khateeb]),
   ];
-  if (values.some((value) => typeof value !== "string" || !value.trim() || value.length > 300)) {
+  if (!Array.isArray(content.announcements) || content.announcements.length !== 4
+    || content.announcements.some((announcement) => typeof announcement !== "string" || announcement.length > 300)
+    || values.some((value) => typeof value !== "string" || !value.trim() || value.length > 300)) {
     return NextResponse.json({ error: "All fields are required and must be 300 characters or less." }, { status: 400 });
   }
 

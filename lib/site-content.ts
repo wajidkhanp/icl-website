@@ -15,7 +15,7 @@ export type JumuahEntry = {
 };
 
 export type SiteContent = {
-  announcement: string;
+  announcements: [string, string, string, string];
   iqamaTimes: IqamaTimes;
   jumuah: [JumuahEntry, JumuahEntry];
   weekendDhuhrNote: string;
@@ -23,8 +23,12 @@ export type SiteContent = {
 };
 
 export const defaultSiteContent: SiteContent = {
-  announcement:
-    "Iqama time update for Fajr & Isha Prayers. Zohar on every Sat & Sun @ 1:30 PM. Friday Night Halaqa after Isha. Youth Program (Halaqa) every Saturday after Isha.",
+  announcements: [
+    "Iqama time update for Fajr & Isha Prayers.",
+    "Zohar on every Sat & Sun @ 1:30 PM.",
+    "Friday Night Halaqa after Isha.",
+    "Youth Program (Halaqa) every Saturday after Isha.",
+  ],
   iqamaTimes: {
     fajr: "5:30 AM",
     dhuhr: "1:30 PM",
@@ -48,7 +52,9 @@ function isContent(value: unknown): value is SiteContent {
   if (!value || typeof value !== "object") return false;
   const content = value as SiteContent;
   const iqamaKeys = ["fajr", "dhuhr", "asr", "maghrib", "isha"] as const;
-  return typeof content.announcement === "string"
+  return Array.isArray(content.announcements)
+    && content.announcements.length === 4
+    && content.announcements.every((announcement) => typeof announcement === "string" && announcement.length <= 300)
     && typeof content.weekendDhuhrNote === "string"
     && typeof content.seasonalNote === "string"
     && content.iqamaTimes !== undefined
@@ -61,6 +67,12 @@ function isContent(value: unknown): value is SiteContent {
 export function readSiteContent(): SiteContent {
   try {
     const parsed: unknown = JSON.parse(readFileSync(contentFilePath(), "utf8"));
+    if (parsed && typeof parsed === "object" && typeof (parsed as { announcement?: unknown }).announcement === "string") {
+      const legacy = parsed as Record<string, unknown>;
+      delete legacy.announcement;
+      legacy.announcements = [(parsed as { announcement: string }).announcement, "", "", ""];
+      return isContent(legacy) ? legacy : defaultSiteContent;
+    }
     return isContent(parsed) ? parsed : defaultSiteContent;
   } catch {
     return defaultSiteContent;

@@ -4,7 +4,7 @@ import { FormEvent, useEffect, useState } from "react";
 import type { SiteContent } from "@/lib/site-content";
 
 const emptyContent: SiteContent = {
-  announcement: "",
+  announcements: ["", "", "", ""],
   iqamaTimes: { fajr: "", dhuhr: "", asr: "", maghrib: "", isha: "" },
   jumuah: [{ time: "", khateeb: "" }, { time: "", khateeb: "" }],
   weekendDhuhrNote: "",
@@ -117,7 +117,13 @@ export default function AdminConsole() {
       <section className="rounded-2xl border border-islamic-100 bg-white p-5 shadow-sm sm:p-7">
         <h2 className="font-cinzel text-xl font-bold text-islamic-800">Public Messages</h2>
         <div className="mt-5 space-y-4">
-          <label className="block space-y-1.5"><span className="text-sm font-semibold text-islamic-800">Announcement banner</span><textarea value={content.announcement} onChange={(event) => setContent({ ...content, announcement: event.target.value })} rows={3} className="w-full rounded-xl border border-islamic-200 px-3 py-2.5 outline-none focus:border-islamic-500 focus:ring-2 focus:ring-islamic-200" required /></label>
+          <p className="text-sm text-gray-500">Add up to four announcement lines. Empty sections will not appear on the website.</p>
+          {content.announcements.map((announcement, index) => (
+            <label key={index} className="block space-y-1.5">
+              <span className="text-sm font-semibold text-islamic-800">Announcement {index + 1}</span>
+              <input value={announcement} onChange={(event) => setContent({ ...content, announcements: content.announcements.map((item, itemIndex) => itemIndex === index ? event.target.value : item) as SiteContent["announcements"] })} maxLength={300} className="w-full rounded-xl border border-islamic-200 px-3 py-2.5 outline-none focus:border-islamic-500 focus:ring-2 focus:ring-islamic-200" />
+            </label>
+          ))}
           <Field label="Weekend Dhuhr note" value={content.weekendDhuhrNote} onChange={(value) => setContent({ ...content, weekendDhuhrNote: value })} />
           <Field label="Seasonal note" value={content.seasonalNote} onChange={(value) => setContent({ ...content, seasonalNote: value })} />
         </div>

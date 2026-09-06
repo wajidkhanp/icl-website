@@ -1,5 +1,10 @@
 {
-  "announcement": "Iqama time update for Fajr & Isha Prayers. Zohar on every Sat & Sun @ 1:30 PM. Friday Night Halaqa after Isha. Youth Program (Halaqa) every Saturday after Isha.",
+  "announcements": [
+    "Iqama time update for Fajr & Isha Prayers.",
+    "Zohar on every Sat & Sun @ 1:30 PM.",
+    "Friday Night Halaqa after Isha.",
+    "Youth Program (Halaqa) every Saturday after Isha."
+  ],
   "iqamaTimes": {
     "fajr": "5:30 AM",
     "dhuhr": "1:30 PM",

@@ -1,4 +1,6 @@
-export default function AnnouncementBanner({ announcement }: { announcement: string }) {
+export default function AnnouncementBanner({ announcements }: { announcements: string[] }) {
+  const visibleAnnouncements = announcements.filter((announcement) => announcement.trim());
+
   return (
     <section className="border-y-2 border-gold-400 bg-gold-100 px-4 py-6 sm:py-7" aria-label="Community announcement">
       <div className="mx-auto flex max-w-5xl items-center gap-4 sm:gap-6" data-aos="fade-up">
@@ -10,9 +12,9 @@ export default function AnnouncementBanner({ announcement }: { announcement: str
             <span className="h-2 w-2 rounded-full bg-gold-600" aria-hidden="true" />
             <p className="font-cinzel text-xs font-bold uppercase tracking-[0.18em] text-gold-700">Community Announcement</p>
           </div>
-          <p className="max-w-4xl text-sm font-semibold leading-6 text-islamic-900 sm:text-base sm:leading-7">
-            {announcement}
-          </p>
+          <div className="max-w-4xl space-y-1 text-sm font-semibold leading-6 text-islamic-900 sm:text-base sm:leading-7">
+            {visibleAnnouncements.map((announcement) => <p key={announcement}>{announcement}</p>)}
+          </div>
         </div>
       </div>
     </section>

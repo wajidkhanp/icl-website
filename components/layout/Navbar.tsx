@@ -25,7 +25,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 px-4 md:px-6 py-3">
+    <header onKeyDown={(event) => { if (event.key === "Escape") setMenuOpen(false); }} className="fixed top-0 left-0 right-0 z-50 px-4 md:px-6 py-3">
       {/* Pill bar */}
       <div
         className={`max-w-7xl mx-auto rounded-full transition-all duration-300 px-4 py-2 ${
@@ -77,6 +77,8 @@ export default function Navbar() {
             onClick={() => setMenuOpen(!menuOpen)}
             className="lg:hidden p-2 rounded-lg text-islamic-700"
             aria-label="Toggle menu"
+            aria-expanded={menuOpen}
+            aria-controls="mobile-navigation"
           >
             {menuOpen ? (
               <>
@@ -97,7 +99,7 @@ export default function Navbar() {
       {/* Mobile dropdown — separate from the pill */}
       {menuOpen && (
         <div className="lg:hidden max-w-7xl mx-auto mt-2">
-          <nav className="bg-white/95 backdrop-blur-md rounded-2xl shadow-xl shadow-islamic-900/10 border border-islamic-100 px-4 py-4 flex flex-col gap-1">
+          <nav id="mobile-navigation" className="bg-white/95 backdrop-blur-md rounded-2xl shadow-xl shadow-islamic-900/10 border border-islamic-100 px-4 py-4 flex flex-col gap-1">
             {navLinks.map((link) => (
               <Link
                 key={link.href}

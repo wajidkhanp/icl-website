@@ -117,7 +117,7 @@ export default function ConstructionPage() {
                   className={`relative flex gap-6 md:gap-0 ${i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}
                 >
                   {/* Dot */}
-                  <div className="relative z-10 flex-shrink-0">
+                  <div className="relative z-10 flex-shrink-0 md:absolute md:left-1/2 md:-translate-x-1/2">
                     <div
                       className={`w-12 h-12 rounded-full flex items-center justify-center text-xl border-4 border-white shadow-lg ${
                         m.status === "completed"
@@ -209,6 +209,7 @@ export default function ConstructionPage() {
                   src={`https://www.islamiccenteroflaveen.org/masjid-pics/${img}.jpeg`}
                   alt={`ICL Community Photo ${i + 1}`}
                   fill
+                  sizes="(min-width: 768px) 25vw, 50vw"
                   className="object-cover hover:scale-105 transition-transform duration-300"
                 />
               </div>

@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/ui/PageHero";
-import { fetchPrayerTimes } from "@/lib/prayer-times";
+import { fetchPrayerTimes, getMasjidDate } from "@/lib/prayer-times";
 import { iqamaTimes, jumuahTimes } from "@/lib/iqama-config";
+import { connection } from "next/server";
+import PrayerTimesRefresh from "@/components/home/PrayerTimesRefresh";
 
 export const metadata: Metadata = {
   title: "Prayer Times",
@@ -17,15 +19,14 @@ const PRAYERS = [
   { key: "Isha" as const,    name: "Isha",    arabic: "العشاء",  icon: "🌃", iqama: iqamaTimes.isha },
 ] as const;
 
-const EXTRA_TIMES = [
-  { key: "Sunrise" as const, name: "Sunrise", arabic: "الشروق", icon: "🌄" },
-] as const;
-
 export default async function PrayerTimesPage() {
-  const prayerData = await fetchPrayerTimes();
+  await connection();
+  const now = new Date();
+  const prayerData = await fetchPrayerTimes(now);
 
   return (
     <>
+      <PrayerTimesRefresh date={getMasjidDate(now)} />
       <PageHero
         badge="Salah Times"
         title="Prayer"
@@ -61,9 +62,11 @@ export default async function PrayerTimesPage() {
             </div>
           )}
 
+          {!prayerData && <p role="status" className="text-center text-gray-600 mb-6">Adhan times are temporarily unavailable. Please contact the masjid to confirm today&apos;s schedule.</p>}
+
           {/* Main prayer table */}
           <div className="bg-white rounded-3xl border border-islamic-100 shadow-sm overflow-hidden mb-8" data-aos="fade-up" data-aos-delay="100">
-            <div className="bg-islamic-700 px-6 py-4 grid grid-cols-4 text-white text-sm font-cinzel font-bold uppercase tracking-wider">
+            <div className="bg-islamic-700 px-2 sm:px-6 py-4 grid grid-cols-4 text-white text-sm font-cinzel font-bold uppercase tracking-wider">
               <span>Prayer</span>
               <span className="text-center">Arabic</span>
               <span className="text-center">Adhan</span>
@@ -73,26 +76,26 @@ export default async function PrayerTimesPage() {
             {PRAYERS.map((prayer, i) => (
               <div
                 key={prayer.key}
-                className={`px-6 py-5 grid grid-cols-4 items-center border-b border-islamic-50 last:border-0 transition-colors hover:bg-islamic-50 ${i % 2 === 0 ? "bg-white" : "bg-gray-50/50"}`}
+                className={`px-2 sm:px-6 py-5 grid grid-cols-4 items-center border-b border-islamic-50 last:border-0 transition-colors hover:bg-islamic-50 ${i % 2 === 0 ? "bg-white" : "bg-gray-50/50"}`}
               >
-                <div className="flex items-center gap-3">
+                <div className="flex flex-col sm:flex-row items-center gap-1 sm:gap-3">
                   <span className="text-2xl">{prayer.icon}</span>
-                  <span className="font-cinzel font-bold text-islamic-700 text-lg">{prayer.name}</span>
+                  <span className="font-cinzel font-bold text-islamic-700 text-sm sm:text-lg">{prayer.name}</span>
                 </div>
                 <p className="text-center text-gray-400 font-cinzel arabic-text text-lg">{prayer.arabic}</p>
                 <p className="text-center font-semibold text-gray-700">
                   {prayerData ? prayerData.timings[prayer.key] : "—"}
                 </p>
-                <p className="text-center font-bold text-islamic-600">{prayer.iqama}</p>
+                <p className="text-center text-sm sm:text-base font-bold text-islamic-600">{prayer.iqama}</p>
               </div>
             ))}
 
             {/* Sunrise row (adhan only, no iqama) */}
             {prayerData && (
-              <div className="px-6 py-5 grid grid-cols-4 items-center bg-amber-50/60 border-t border-amber-100">
-                <div className="flex items-center gap-3">
+              <div className="px-2 sm:px-6 py-5 grid grid-cols-4 items-center bg-amber-50/60 border-t border-amber-100">
+                <div className="flex flex-col sm:flex-row items-center gap-1 sm:gap-3">
                   <span className="text-2xl">🌄</span>
-                  <span className="font-cinzel font-bold text-amber-700 text-lg">Sunrise</span>
+                  <span className="font-cinzel font-bold text-amber-700 text-sm sm:text-lg">Sunrise</span>
                 </div>
                 <p className="text-center text-gray-400 font-cinzel arabic-text text-lg">الشروق</p>
                 <p className="text-center font-semibold text-gray-700">{prayerData.timings.Sunrise}</p>

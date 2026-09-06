@@ -113,7 +113,7 @@ export default function MembershipPage() {
                   <div className="absolute inset-0 pattern-overlay opacity-20" />
                 )}
                 {tier.highlight && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                  <div className="absolute top-2 left-1/2 -translate-x-1/2">
                     <span className="bg-gold-500 text-white font-cinzel font-bold text-xs px-4 py-1 rounded-full">
                       Most Popular
                     </span>

@@ -36,6 +36,7 @@ export default function ContactForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (status === "loading") return;
     setStatus("loading");
     setErrorMsg("");
 
@@ -62,7 +63,7 @@ export default function ContactForm() {
 
   if (status === "success") {
     return (
-      <div className="text-center py-12 bg-islamic-50 rounded-2xl border border-islamic-100">
+      <div role="status" className="text-center py-12 bg-islamic-50 rounded-2xl border border-islamic-100">
         <div className="text-6xl mb-4">✅</div>
         <h3 className="font-cinzel font-bold text-xl text-islamic-700 mb-2">
           Message Sent — JazakAllah Khair!
@@ -84,12 +85,14 @@ export default function ContactForm() {
     <form onSubmit={handleSubmit} className="space-y-4">
       <div className="grid sm:grid-cols-2 gap-4">
         <div>
-          <label className="block text-sm font-semibold text-gray-700 mb-1.5">
+          <label htmlFor="contact-name" className="block text-sm font-semibold text-gray-700 mb-1.5">
             Full Name <span className="text-red-400">*</span>
           </label>
           <input
             type="text"
+            id="contact-name"
             name="name"
+            maxLength={200}
             value={form.name}
             onChange={handleChange}
             required
@@ -98,12 +101,14 @@ export default function ContactForm() {
           />
         </div>
         <div>
-          <label className="block text-sm font-semibold text-gray-700 mb-1.5">
+          <label htmlFor="contact-email" className="block text-sm font-semibold text-gray-700 mb-1.5">
             Email <span className="text-red-400">*</span>
           </label>
           <input
             type="email"
+            id="contact-email"
             name="email"
+            maxLength={254}
             value={form.email}
             onChange={handleChange}
             required
@@ -114,10 +119,11 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label className="block text-sm font-semibold text-gray-700 mb-1.5">
+        <label htmlFor="contact-subject" className="block text-sm font-semibold text-gray-700 mb-1.5">
           Subject <span className="text-red-400">*</span>
         </label>
         <select
+          id="contact-subject"
           name="subject"
           value={form.subject}
           onChange={handleChange}
@@ -130,11 +136,13 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label className="block text-sm font-semibold text-gray-700 mb-1.5">
+        <label htmlFor="contact-message" className="block text-sm font-semibold text-gray-700 mb-1.5">
           Message <span className="text-red-400">*</span>
         </label>
         <textarea
+          id="contact-message"
           name="message"
+          maxLength={10000}
           value={form.message}
           onChange={handleChange}
           required
@@ -145,7 +153,7 @@ export default function ContactForm() {
       </div>
 
       {status === "error" && (
-        <div className="bg-red-50 border border-red-200 text-red-700 rounded-xl px-4 py-3 text-sm">
+        <div role="alert" className="bg-red-50 border border-red-200 text-red-700 rounded-xl px-4 py-3 text-sm">
           {errorMsg}{" "}
           <a
             href={`mailto:${MASJID_EMAIL}`}

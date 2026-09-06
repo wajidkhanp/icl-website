@@ -145,10 +145,10 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-4 text-gray-600 leading-relaxed">
                 <p>
-                  It began the way most great things begin — with a need and a handful of people willing to do something about it. Muslim families in Laveen were driving long distances just to pray Jumu'ah. They wanted their children to grow up knowing the Quran. They wanted neighbors who shared their values.
+                  It began the way most great things begin — with a need and a handful of people willing to do something about it. Muslim families in Laveen were driving long distances just to pray Jumu&apos;ah. They wanted their children to grow up knowing the Quran. They wanted neighbors who shared their values.
                 </p>
                 <p>
-                  So in 2020, a small group came together and made du'a. They rented a space, rolled out the prayer rugs, and called the adhan. From that first congregation grew what you see today — a thriving Islamic center with daily prayers, a Quran school, halaqas for every age, and a community knit together by love of Allah.
+                  So in 2020, a small group came together and made du&apos;a. They rented a space, rolled out the prayer rugs, and called the adhan. From that first congregation grew what you see today — a thriving Islamic center with daily prayers, a Quran school, halaqas for every age, and a community knit together by love of Allah.
                 </p>
                 <p className="italic border-l-4 border-gold-400 pl-4 text-gray-500">
                   &quot;Whoever travels a path in search of knowledge, Allah will make easy for them a path to Paradise.&quot;

@@ -6,6 +6,7 @@ export const MOHID_DONATION_URL =
   "https://us.mohid.co/az/phoenix/iclaveen/masjid/online/donation";
 export const LAT = 33.3742;
 export const LNG = -112.088;
+export const MASJID_TIMEZONE = "America/Phoenix";
 
 export const iqamaTimes = {
   fajr: "5:30 AM",

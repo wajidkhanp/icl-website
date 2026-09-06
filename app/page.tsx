@@ -4,13 +4,18 @@ import AnnouncementBanner from "@/components/home/AnnouncementBanner";
 import DonationSection from "@/components/home/DonationSection";
 import ProgramsSection from "@/components/home/ProgramsSection";
 import AboutSection from "@/components/home/AboutSection";
-import { fetchPrayerTimes } from "@/lib/prayer-times";
+import { fetchPrayerTimes, getMasjidDate } from "@/lib/prayer-times";
+import { connection } from "next/server";
+import PrayerTimesRefresh from "@/components/home/PrayerTimesRefresh";
 
 export default async function Home() {
-  const prayerData = await fetchPrayerTimes();
+  await connection();
+  const now = new Date();
+  const prayerData = await fetchPrayerTimes(now);
 
   return (
     <>
+      <PrayerTimesRefresh date={getMasjidDate(now)} />
       <HeroSlider />
       <AnnouncementBanner />
       <PrayerTimesSection prayerData={prayerData} />

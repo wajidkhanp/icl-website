@@ -15,6 +15,7 @@
   --color-islamic-950: #071810;
 
   /* Gold accent */
+  --color-gold-100: #faf3d9;
   --color-gold-300: #f5e4a0;
   --color-gold-400: #e5c56a;
   --color-gold-500: #c9a84c;
@@ -28,6 +29,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
 }
 
 body {
@@ -38,7 +40,7 @@ body {
 .arabic-text {
   font-family: var(--font-cinzel), serif;
   direction: rtl;
-  unicode-bidi: bidi-override;
+  unicode-bidi: isolate;
 }
 
 /* Islamic geometric SVG pattern overlay */
@@ -73,4 +75,33 @@ body {
 [data-aos="fade-up"].aos-animate {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Keep server-rendered content visible until animations initialize. */
+html:not(.aos-enabled) [data-aos] {
+  opacity: 1 !important;
+  transform: none !important;
+  pointer-events: auto !important;
+}
+
+.ticker-content:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  [data-aos] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .ticker-content {
+    animation: none;
+    white-space: normal;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

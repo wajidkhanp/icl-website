@@ -26,6 +26,7 @@ export default function MembershipForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (status === "loading") return;
     setStatus("loading");
     setErrorMsg("");
 
@@ -54,7 +55,7 @@ export default function MembershipForm() {
 
   if (status === "success") {
     return (
-      <div className="text-center py-14 bg-white rounded-2xl border border-islamic-100 shadow-sm">
+      <div role="status" className="text-center py-14 bg-white rounded-2xl border border-islamic-100 shadow-sm">
         <div className="text-6xl mb-4">🎉</div>
         <h3 className="font-cinzel font-bold text-2xl text-islamic-700 mb-2">
           Welcome to the ICL Family!
@@ -68,12 +69,14 @@ export default function MembershipForm() {
   return (
     <form onSubmit={handleSubmit} className="bg-white rounded-2xl border border-islamic-100 shadow-sm p-8 space-y-5">
       <div>
-        <label className="block text-sm font-semibold text-gray-700 mb-1.5">
+        <label htmlFor="membership-name" className="block text-sm font-semibold text-gray-700 mb-1.5">
           Full Name <span className="text-red-400">*</span>
         </label>
         <input
           type="text"
+          id="membership-name"
           name="name"
+          maxLength={200}
           value={form.name}
           onChange={handleChange}
           required
@@ -84,12 +87,14 @@ export default function MembershipForm() {
 
       <div className="grid sm:grid-cols-2 gap-4">
         <div>
-          <label className="block text-sm font-semibold text-gray-700 mb-1.5">
+          <label htmlFor="membership-email" className="block text-sm font-semibold text-gray-700 mb-1.5">
             Email <span className="text-red-400">*</span>
           </label>
           <input
             type="email"
+            id="membership-email"
             name="email"
+            maxLength={254}
             value={form.email}
             onChange={handleChange}
             required
@@ -98,10 +103,12 @@ export default function MembershipForm() {
           />
         </div>
         <div>
-          <label className="block text-sm font-semibold text-gray-700 mb-1.5">Phone (optional)</label>
+          <label htmlFor="membership-phone" className="block text-sm font-semibold text-gray-700 mb-1.5">Phone (optional)</label>
           <input
             type="tel"
+            id="membership-phone"
             name="phone"
+            maxLength={50}
             value={form.phone}
             onChange={handleChange}
             placeholder="(602) 555-0100"
@@ -111,8 +118,9 @@ export default function MembershipForm() {
       </div>
 
       <div>
-        <label className="block text-sm font-semibold text-gray-700 mb-1.5">Membership Type</label>
+        <label htmlFor="membership-membership" className="block text-sm font-semibold text-gray-700 mb-1.5">Membership Type</label>
         <select
+          id="membership-membership"
           name="membership"
           value={form.membership}
           onChange={handleChange}
@@ -126,11 +134,13 @@ export default function MembershipForm() {
       </div>
 
       <div>
-        <label className="block text-sm font-semibold text-gray-700 mb-1.5">
+        <label htmlFor="membership-message" className="block text-sm font-semibold text-gray-700 mb-1.5">
           Anything you&apos;d like us to know? (optional)
         </label>
         <textarea
+          id="membership-message"
           name="message"
+          maxLength={9500}
           value={form.message}
           onChange={handleChange}
           rows={4}
@@ -140,7 +150,7 @@ export default function MembershipForm() {
       </div>
 
       {status === "error" && (
-        <div className="bg-red-50 border border-red-200 text-red-700 rounded-xl px-4 py-3 text-sm">
+        <div role="alert" className="bg-red-50 border border-red-200 text-red-700 rounded-xl px-4 py-3 text-sm">
           {errorMsg}{" "}
           <a href={`mailto:${MASJID_EMAIL}`} className="underline font-semibold">
             Email us directly

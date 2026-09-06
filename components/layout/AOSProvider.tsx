@@ -11,11 +11,14 @@ export default function AOSProvider({
 }) {
   useEffect(() => {
     AOS.init({
+      disable: () => window.matchMedia("(prefers-reduced-motion: reduce)").matches,
       easing: "ease-out-cubic",
       duration: 800,
       once: true,
       offset: 80,
     });
+    document.documentElement.classList.add("aos-enabled");
+    return () => document.documentElement.classList.remove("aos-enabled");
   }, []);
 
   return <>{children}</>;

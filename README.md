@@ -18,7 +18,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load the Cinzel and Manrope fonts from Google Fonts. Production builds need network access to download these fonts.
 
 ## Learn More
 
@@ -34,3 +34,18 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Configuration and checks
+
+Copy `.env.local.example` to `.env.local` and configure `RESEND_API_KEY`,
+`CONTACT_TO_EMAIL`, and `CONTACT_FROM_EMAIL` to enable contact and membership
+emails. The sender domain must be verified in Resend for production delivery.
+Without an API key, forms return an error and offer a direct email link.
+
+Prayer coordinates, the Phoenix timezone, and manually maintained Iqama and
+Jumu'ah times are in `lib/iqama-config.ts`. Adhan times are fetched from AlAdhan
+using a cache key for the current Phoenix date; invalid or unavailable responses
+show an unavailable message. Keep the manually maintained times up to date.
+
+Run `npm run lint`, `npm test`, and `npm run build` before deploying.
+The regression tests mock external services and do not send email.

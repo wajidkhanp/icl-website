@@ -57,31 +57,34 @@ const slides = [
 
 export default function HeroSlider() {
   const [current, setCurrent] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(false);
+  const [paused, setPaused] = useState(false);
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setIsAnimating(true);
-      setTimeout(() => {
-        setCurrent((prev) => (prev + 1) % slides.length);
-        setIsAnimating(false);
-      }, 300);
-    }, 6000);
-    return () => clearInterval(timer);
-  }, []);
+    const preference = window.matchMedia("(prefers-reduced-motion: reduce)");
+    let timer: ReturnType<typeof setInterval> | undefined;
+    const sync = () => {
+      clearInterval(timer);
+      if (!paused && !preference.matches) {
+        timer = setInterval(() => setCurrent((prev) => (prev + 1) % slides.length), 6000);
+      }
+    };
+    sync();
+    preference.addEventListener("change", sync);
+    return () => {
+      clearInterval(timer);
+      preference.removeEventListener("change", sync);
+    };
+  }, [paused]);
 
   const goTo = (index: number) => {
-    setIsAnimating(true);
-    setTimeout(() => {
-      setCurrent(index);
-      setIsAnimating(false);
-    }, 200);
+    setPaused(true);
+    setCurrent(index);
   };
 
   const slide = slides[current];
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
+    <section aria-label="Community highlights" aria-roledescription="carousel" onFocusCapture={(event) => { if (!event.target.hasAttribute("data-rotation-control")) setPaused(true); }} className="relative min-h-screen flex items-center overflow-hidden">
       {/* Background images (all preloaded, only current visible) */}
       {slides.map((s, i) => (
         <div
@@ -92,7 +95,7 @@ export default function HeroSlider() {
         >
           <Image
             src={s.image}
-            alt={s.titleHighlight}
+            alt=""
             fill
             sizes="100vw"
             className="object-cover"
@@ -109,13 +112,7 @@ export default function HeroSlider() {
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-32 pt-40">
-        <div
-          className={`max-w-3xl transition-all duration-300 ${
-            isAnimating
-              ? "opacity-0 translate-y-4"
-              : "opacity-100 translate-y-0"
-          }`}
-        >
+        <div className="max-w-3xl">
           {/* Bismillah */}
           <h2 className="text-gold-400 text-3xl md:text-4xl font-bold mb-6 font-cinzel arabic-text text-center w-full">
             بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ
@@ -151,6 +148,10 @@ export default function HeroSlider() {
         </div>
       </div>
 
+      <button type="button" data-rotation-control onClick={() => setPaused((value) => !value)} aria-pressed={paused} className="absolute bottom-16 left-1/2 -translate-x-1/2 z-10 text-white text-sm bg-black/30 rounded-full px-4 py-2">
+        {paused ? "Resume slideshow" : "Pause slideshow"}
+      </button>
+
       {/* Slide indicators */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex gap-2">
         {slides.map((_, i) => (
@@ -158,6 +159,7 @@ export default function HeroSlider() {
             key={i}
             onClick={() => goTo(i)}
             aria-label={`Go to slide ${i + 1}`}
+            aria-current={i === current ? "true" : undefined}
             className={`transition-all duration-300 rounded-full ${
               i === current
                 ? "bg-islamic-400 w-8 h-2"

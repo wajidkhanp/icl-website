@@ -6,9 +6,10 @@ import Footer from "@/components/layout/Footer";
 import AOSProvider from "@/components/layout/AOSProvider";
 import {
   MASJID_NAME,
-  MASJID_ADDRESS,
   MASJID_PHONE,
   MASJID_EMAIL,
+  LAT,
+  LNG,
 } from "@/lib/iqama-config";
 
 const cinzel = Cinzel({
@@ -65,8 +66,8 @@ const jsonLd = {
   },
   geo: {
     "@type": "GeoCoordinates",
-    latitude: 33.3742,
-    longitude: -112.088,
+    latitude: LAT,
+    longitude: LNG,
   },
   telephone: MASJID_PHONE,
   email: MASJID_EMAIL,
@@ -90,8 +91,9 @@ export default function RootLayout({
       </head>
       <body className="min-h-full flex flex-col antialiased">
         <AOSProvider>
+          <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[60] focus:bg-white focus:p-4">Skip to content</a>
           <Navbar />
-          <main className="flex-1">{children}</main>
+          <main id="main-content" className="flex-1">{children}</main>
           <Footer />
         </AOSProvider>
       </body>

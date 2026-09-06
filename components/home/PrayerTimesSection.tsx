@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { PrayerData } from "@/lib/prayer-times";
+import { getNextPrayer, PrayerData } from "@/lib/prayer-times";
 import { iqamaTimes, jumuahTimes } from "@/lib/iqama-config";
 
 const PRAYERS = [
@@ -20,24 +20,6 @@ const iqamaMap: Record<string, string> = {
   Isha: iqamaTimes.isha,
 };
 
-function getNextPrayer(timings: PrayerData["timings"]): string {
-  const now = new Date();
-  const pad = (n: number) => String(n).padStart(2, "0");
-  const currentTime = `${pad(now.getHours())}:${pad(now.getMinutes())}`;
-
-  for (const prayer of PRAYERS) {
-    const t = timings[prayer.key];
-    const [time, ampm] = t.split(" ");
-    const [h, m] = time.split(":").map(Number);
-    let hour24 = h;
-    if (ampm === "PM" && h !== 12) hour24 += 12;
-    if (ampm === "AM" && h === 12) hour24 = 0;
-    const t24 = `${pad(hour24)}:${pad(m)}`;
-    if (t24 > currentTime) return prayer.key;
-  }
-  return "Fajr"; // next day
-}
-
 export default function PrayerTimesSection({
   prayerData,
 }: {
@@ -46,9 +28,10 @@ export default function PrayerTimesSection({
   const [nextPrayer, setNextPrayer] = useState<string>("");
 
   useEffect(() => {
-    if (prayerData) {
-      setNextPrayer(getNextPrayer(prayerData.timings));
-    }
+    const update = () => setNextPrayer(prayerData ? getNextPrayer(prayerData.timings) : "");
+    const initial = requestAnimationFrame(update);
+    const timer = setInterval(update, 1000);
+    return () => { cancelAnimationFrame(initial); clearInterval(timer); };
   }, [prayerData]);
 
   return (
@@ -74,6 +57,8 @@ export default function PrayerTimesSection({
             Adhan & Iqama times for Islamic Center of Laveen
           </p>
         </div>
+
+        {!prayerData && <p role="status" className="text-center text-gray-600 mb-6">Adhan times are temporarily unavailable. Please contact the masjid to confirm today&apos;s schedule.</p>}
 
         {/* Prayer cards */}
         <div

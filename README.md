@@ -41,6 +41,8 @@ Copy `.env.local.example` to `.env.local` and configure `RESEND_API_KEY`,
 `CONTACT_TO_EMAIL`, and `CONTACT_FROM_EMAIL` to enable contact and membership
 emails. The sender domain must be verified in Resend for production delivery.
 Without an API key, forms return an error and offer a direct email link.
+For production, use the verified `islamiccenteroflaveen.org` domain as the
+sender: `CONTACT_FROM_EMAIL=contact@islamiccenteroflaveen.org`.
 
 Prayer coordinates, the Phoenix timezone, and manually maintained Iqama and
 Jumu'ah times are in `lib/iqama-config.ts`. Adhan times are fetched from AlAdhan

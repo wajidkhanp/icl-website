@@ -48,7 +48,7 @@ export async function POST(request: NextRequest) {
     const resend = new Resend(apiKey);
     const toEmail = process.env.CONTACT_TO_EMAIL ?? "secretary@iclaveen.net";
     const fromEmail =
-      process.env.CONTACT_FROM_EMAIL ?? "onboarding@resend.dev";
+      process.env.CONTACT_FROM_EMAIL ?? "contact@islamiccenteroflaveen.org";
 
     const { data, error } = await resend.emails.send({
       from: `ICL Contact Form <${fromEmail}>`,
@@ -89,6 +89,7 @@ export async function POST(request: NextRequest) {
     });
 
     if (error || !data?.id) {
+      console.error("Resend rejected contact email:", error ?? "Missing message ID");
       return NextResponse.json(
         { error: "Failed to send message. Please email us directly." },
         { status: 502 }

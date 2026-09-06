@@ -43,7 +43,7 @@ export default function Navbar() {
               height={48}
               className="rounded-full object-cover"
             />
-            <span className="hidden sm:block font-cinzel font-bold text-islamic-700 text-sm leading-tight">
+            <span className="block font-cinzel font-bold text-islamic-800 text-xs sm:text-sm leading-tight">
               Islamic Center<br />of Laveen
             </span>
           </Link>
@@ -66,7 +66,7 @@ export default function Navbar() {
             href={MOHID_DONATION_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex h-11 min-w-28 shrink-0 items-center justify-center rounded-full bg-gold-400 px-5 text-center font-sans text-sm font-extrabold leading-none text-islamic-950 shadow-sm transition-colors hover:bg-gold-300 lg:justify-self-end"
+            className="hidden lg:inline-flex h-11 min-w-28 shrink-0 items-center justify-center rounded-full bg-gold-400 px-5 text-center font-sans text-sm font-extrabold leading-none text-islamic-950 shadow-sm transition-colors hover:bg-gold-300 lg:justify-self-end"
           >
             Donate
           </a>
@@ -109,6 +109,15 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
+            <a
+              href={MOHID_DONATION_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setMenuOpen(false)}
+              className="mt-2 rounded-xl bg-gold-400 px-3 py-3 text-center font-sans text-sm font-extrabold text-islamic-950 transition-colors hover:bg-gold-300"
+            >
+              Donate
+            </a>
           </nav>
         </div>
       )}

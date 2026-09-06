@@ -6,25 +6,21 @@ const campaigns = [
     title: "General Fund",
     desc: "Keep the lights on, the doors open, and the adhan calling. Your support sustains every prayer held at ICL.",
     icon: "🕌",
-    link: MOHID_DONATION_URL,
   },
   {
     title: "Building Fund",
     desc: "Be among those who build Allah's house. Every dollar is a brick in a masjid that will outlast us all.",
     icon: "🏗️",
-    link: MOHID_DONATION_URL,
   },
   {
     title: "Zakat",
     desc: "Purify your wealth and fulfil your obligation. ICL distributes Zakat to eligible families with trust and care.",
     icon: "🌙",
-    link: MOHID_DONATION_URL,
   },
   {
     title: "Sadaqah",
     desc: "A smile is sadaqah — and so is funding a child's Quran class. No gift is too small in the sight of Allah.",
     icon: "💚",
-    link: MOHID_DONATION_URL,
   },
 ];
 
@@ -71,15 +67,7 @@ export default function DonationSection() {
               <h3 className="font-cinzel font-bold text-islamic-700 text-lg mb-2">
                 {c.title}
               </h3>
-              <p className="text-gray-500 text-sm mb-5 leading-relaxed">{c.desc}</p>
-              <a
-                href={c.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block w-full text-center bg-islamic-700 hover:bg-islamic-600 text-white font-cinzel font-semibold text-sm py-2.5 rounded-xl transition-colors"
-              >
-                Donate →
-              </a>
+              <p className="text-gray-500 text-sm leading-relaxed">{c.desc}</p>
             </div>
           ))}
         </div>

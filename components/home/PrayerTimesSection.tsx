@@ -30,10 +30,10 @@ export default function PrayerTimesSection({
             </div>
           )}
           <h2 className="font-cinzel font-bold text-3xl md:text-4xl text-islamic-700 mb-3">
-            Prayer Times
+            Iqama Times
           </h2>
           <p className="text-gray-500 text-sm">
-            Adhan & Iqama times for Islamic Center of Laveen
+            Iqama times for Islamic Center of Laveen
           </p>
         </div>
 

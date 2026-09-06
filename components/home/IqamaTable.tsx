@@ -12,13 +12,12 @@ export default function IqamaTable({ iqamaTimes, jumuah }: { iqamaTimes: IqamaTi
   return (
     <div className="space-y-5">
       <div className="overflow-hidden rounded-2xl border border-islamic-200 bg-white shadow-sm">
-        <div className="grid grid-cols-[1fr_auto] bg-islamic-700 px-4 py-3 text-xs font-bold uppercase tracking-wider text-white sm:grid-cols-[1.4fr_1fr_1fr] sm:px-6">
+        <div className="grid grid-cols-[1fr_auto] bg-islamic-700 px-4 py-3 text-xs font-bold uppercase tracking-wider text-white sm:grid-cols-[1.4fr_1fr] sm:px-6">
           <span>Prayer</span>
           <span className="text-right sm:text-left">Iqama</span>
-          <span className="hidden sm:block">Details</span>
         </div>
         {prayers.map((prayer, index) => (
-          <div key={prayer.key} className={`grid grid-cols-[1fr_auto] items-center gap-3 border-t border-islamic-100 px-4 py-4 sm:grid-cols-[1.4fr_1fr_1fr] sm:px-6 ${index % 2 ? "bg-islamic-50/60" : "bg-white"}`}>
+          <div key={prayer.key} className={`grid grid-cols-[1fr_auto] items-center gap-3 border-t border-islamic-100 px-4 py-4 sm:grid-cols-[1.4fr_1fr] sm:px-6 ${index % 2 ? "bg-islamic-50/60" : "bg-white"}`}>
             <div className="flex items-center gap-3">
               <span className="text-xl" aria-hidden="true">{prayer.icon}</span>
               <div>
@@ -27,7 +26,6 @@ export default function IqamaTable({ iqamaTimes, jumuah }: { iqamaTimes: IqamaTi
               </div>
             </div>
             <p className="text-right font-cinzel text-lg font-bold text-islamic-700 sm:text-left">{iqamaTimes[prayer.key as keyof IqamaTimes]}</p>
-            <p className="hidden text-sm text-gray-500 sm:block">Congregation time</p>
           </div>
         ))}
       </div>

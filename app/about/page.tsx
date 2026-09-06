@@ -128,7 +128,7 @@ export default function AboutPage() {
           <div className="grid md:grid-cols-2 gap-6 md:gap-8 items-center">
             <div data-aos="fade-right">
               <Image
-                src="https://www.islamiccenteroflaveen.org/masjid-pics/slide1.jpeg"
+                src="/masjidICL1.jpg"
                 alt="Islamic Center of Laveen"
                 width={640}
                 height={430}

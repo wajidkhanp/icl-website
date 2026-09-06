@@ -27,7 +27,7 @@ const slides = [
     ctaLink: MOHID_DONATION_URL,
     secondaryCta: "Ways to Give",
     secondaryCtaLink: "/donate",
-    image: "https://www.islamiccenteroflaveen.org/masjid-pics/slide2.jpeg",
+    image: "/masjidICL1.jpg",
   },
   {
     titleStart: "Give Your Child",
@@ -39,7 +39,7 @@ const slides = [
     ctaLink: "/education",
     secondaryCta: "Our Programs",
     secondaryCtaLink: "/education",
-    image: "https://www.islamiccenteroflaveen.org/masjid-pics/quran.jpeg",
+    image: "/masjidICL1.jpg",
   },
   {
     titleStart: "You Don't Have to",
@@ -51,7 +51,7 @@ const slides = [
     ctaLink: "/membership",
     secondaryCta: "Contact Us",
     secondaryCtaLink: "/contact",
-    image: "https://www.islamiccenteroflaveen.org/masjid-pics/slide3.jpeg",
+    image: "/masjidICL1.jpg",
   },
 ];
 
@@ -84,7 +84,7 @@ export default function HeroSlider() {
   const slide = slides[current];
 
   return (
-    <section aria-label="Community highlights" aria-roledescription="carousel" onFocusCapture={(event) => { if (!event.target.hasAttribute("data-rotation-control")) setPaused(true); }} className="relative flex items-center overflow-hidden">
+    <section aria-label="Community highlights" aria-roledescription="carousel" onFocusCapture={(event) => { if (!event.target.hasAttribute("data-rotation-control")) setPaused(true); }} className="relative flex min-h-[580px] items-center overflow-hidden md:min-h-[640px]">
       {/* Background images (all preloaded, only current visible) */}
       {slides.map((s, i) => (
         <div
@@ -98,7 +98,7 @@ export default function HeroSlider() {
             alt=""
             fill
             sizes="100vw"
-            className="object-cover"
+            className="object-cover object-center"
             priority={i === 0}
           />
         </div>

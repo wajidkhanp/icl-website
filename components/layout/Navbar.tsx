@@ -37,7 +37,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 shrink-0">
             <Image
-              src="https://www.islamiccenteroflaveen.org/images/logo.jpg"
+              src="/masjidICL1.jpg"
               alt="Islamic Center of Laveen"
               width={48}
               height={48}

@@ -7,18 +7,20 @@ import AboutSection from "@/components/home/AboutSection";
 import { fetchPrayerTimes, getMasjidDate } from "@/lib/prayer-times";
 import { connection } from "next/server";
 import PrayerTimesRefresh from "@/components/home/PrayerTimesRefresh";
+import { readSiteContent } from "@/lib/site-content";
 
 export default async function Home() {
   await connection();
   const now = new Date();
   const prayerData = await fetchPrayerTimes(now);
+  const content = readSiteContent();
 
   return (
     <>
       <PrayerTimesRefresh date={getMasjidDate(now)} />
       <HeroSlider />
-      <AnnouncementBanner />
-      <PrayerTimesSection prayerData={prayerData} />
+      <AnnouncementBanner announcement={content.announcement} />
+      <PrayerTimesSection prayerData={prayerData} iqamaTimes={content.iqamaTimes} jumuah={content.jumuah} />
       <DonationSection />
       <ProgramsSection />
       <AboutSection />

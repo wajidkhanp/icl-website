@@ -49,3 +49,16 @@ show an unavailable message. Keep the manually maintained times up to date.
 
 Run `npm run lint`, `npm test`, and `npm run build` before deploying.
 The regression tests mock external services and do not send email.
+
+## Admin schedule updates
+
+The private admin console is available at `/icl-admin-portal`. It updates the
+flat JSON content file used by the public home, prayer-times, events, and
+announcement sections. Set `ICL_ADMIN_PASSWORD` in Railway before sharing the
+console with the two admins. The code fallback password is intended only for
+initial local testing and should be replaced in production.
+
+For Railway persistence, create and mount a persistent volume, then set
+`ICL_CONTENT_FILE` to a path on that volume, for example
+`/data/site-content.json`. Without a persistent volume, changes made through
+the console can be lost when Railway replaces or restarts the container.

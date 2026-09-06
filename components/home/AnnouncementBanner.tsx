@@ -1,9 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { announcement } from "@/lib/iqama-config";
 
-export default function AnnouncementBanner() {
+export default function AnnouncementBanner({ announcement }: { announcement: string }) {
   const [paused, setPaused] = useState(false);
   return (
     <div className="bg-islamic-700 text-white py-2 overflow-hidden">

@@ -1,0 +1,16 @@
+{
+  "announcement": "Iqama time update for Fajr & Isha Prayers. Zohar on every Sat & Sun @ 1:30 PM. Friday Night Halaqa after Isha. Youth Program (Halaqa) every Saturday after Isha.",
+  "iqamaTimes": {
+    "fajr": "5:30 AM",
+    "dhuhr": "1:30 PM",
+    "asr": "5:30 PM",
+    "maghrib": "+5 min after adhan",
+    "isha": "9:00 PM"
+  },
+  "jumuah": [
+    { "time": "12:30 PM", "khateeb": "Imam Mahmud Iddrisu" },
+    { "time": "1:30 PM", "khateeb": "Br. Dawood Ahmed" }
+  ],
+  "weekendDhuhrNote": "Dhuhr on every Saturday & Sunday @ 1:30 PM.",
+  "seasonalNote": "Prayer times may change seasonally."
+}

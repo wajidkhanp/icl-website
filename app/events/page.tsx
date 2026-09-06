@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/ui/PageHero";
 import SectionTitle from "@/components/ui/SectionTitle";
-import { jumuahTimes } from "@/lib/iqama-config";
+import { readSiteContent } from "@/lib/site-content";
 
 export const metadata: Metadata = {
   title: "Events & Programs",
@@ -49,6 +49,8 @@ const weeklyEvents = [
 ];
 
 export default function EventsPage() {
+  const { jumuah } = readSiteContent();
+
   return (
     <>
       <PageHero
@@ -144,10 +146,11 @@ export default function EventsPage() {
                 &quot;O you who believe! When the call to Friday prayer is made, hasten — leave your work and hurry to the remembrance of Allah.&quot; — Quran 62:9
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-6 mb-8">
-                {jumuahTimes.map((t, i) => (
-                  <div key={t} className="bg-white/10 border border-white/20 rounded-2xl px-10 py-6">
+                {jumuah.map((entry, i) => (
+                  <div key={`${entry.time}-${i}`} className="bg-white/10 border border-white/20 rounded-2xl px-10 py-6">
                     <p className="text-islamic-300 text-sm font-semibold mb-1">{i === 0 ? "1st Jumu'ah" : "2nd Jumu'ah"}</p>
-                    <p className="font-cinzel font-bold text-white text-3xl">{t}</p>
+                    <p className="font-cinzel font-bold text-white text-3xl">{entry.time}</p>
+                    <p className="text-white/80 text-sm mt-2">Khateeb: {entry.khateeb}</p>
                     <p className="text-islamic-300 text-xs mt-2">Khutbah 15 min before</p>
                   </div>
                 ))}

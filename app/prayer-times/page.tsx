@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/ui/PageHero";
 import { fetchPrayerTimes, getMasjidDate } from "@/lib/prayer-times";
-import { iqamaTimes, jumuahTimes } from "@/lib/iqama-config";
+import { readSiteContent } from "@/lib/site-content";
 import { connection } from "next/server";
 import PrayerTimesRefresh from "@/components/home/PrayerTimesRefresh";
 
@@ -11,18 +11,18 @@ export const metadata: Metadata = {
     "Daily prayer times (Adhan & Iqama) for Islamic Center of Laveen. Live prayer schedule for Fajr, Dhuhr, Asr, Maghrib, Isha, and Jumu'ah.",
 };
 
-const PRAYERS = [
-  { key: "Fajr" as const,    name: "Fajr",    arabic: "الفجر",   icon: "🌙", iqama: iqamaTimes.fajr },
-  { key: "Dhuhr" as const,   name: "Dhuhr",   arabic: "الظهر",   icon: "☀️", iqama: iqamaTimes.dhuhr },
-  { key: "Asr" as const,     name: "Asr",     arabic: "العصر",   icon: "🌤️", iqama: iqamaTimes.asr },
-  { key: "Maghrib" as const, name: "Maghrib", arabic: "المغرب",  icon: "🌅", iqama: iqamaTimes.maghrib },
-  { key: "Isha" as const,    name: "Isha",    arabic: "العشاء",  icon: "🌃", iqama: iqamaTimes.isha },
-] as const;
-
 export default async function PrayerTimesPage() {
   await connection();
   const now = new Date();
   const prayerData = await fetchPrayerTimes(now);
+  const content = readSiteContent();
+  const prayers = [
+    { key: "Fajr" as const, name: "Fajr", arabic: "الفجر", icon: "🌙", iqama: content.iqamaTimes.fajr },
+    { key: "Dhuhr" as const, name: "Dhuhr", arabic: "الظهر", icon: "☀️", iqama: content.iqamaTimes.dhuhr },
+    { key: "Asr" as const, name: "Asr", arabic: "العصر", icon: "🌤️", iqama: content.iqamaTimes.asr },
+    { key: "Maghrib" as const, name: "Maghrib", arabic: "المغرب", icon: "🌅", iqama: content.iqamaTimes.maghrib },
+    { key: "Isha" as const, name: "Isha", arabic: "العشاء", icon: "🌃", iqama: content.iqamaTimes.isha },
+  ] as const;
 
   return (
     <>
@@ -73,7 +73,7 @@ export default async function PrayerTimesPage() {
               <span className="text-center">Iqama</span>
             </div>
 
-            {PRAYERS.map((prayer, i) => (
+            {prayers.map((prayer, i) => (
               <div
                 key={prayer.key}
                 className={`px-2 sm:px-6 py-5 grid grid-cols-4 items-center border-b border-islamic-50 last:border-0 transition-colors hover:bg-islamic-50 ${i % 2 === 0 ? "bg-white" : "bg-gray-50/50"}`}
@@ -128,12 +128,13 @@ export default async function PrayerTimesPage() {
               <h3 className="font-cinzel font-bold text-3xl text-white mb-2">Jumu&apos;ah</h3>
               <p className="text-islamic-200 mb-6">Friday congregational prayer — held in two shifts</p>
               <div className="flex flex-col sm:flex-row justify-center gap-4 mb-6">
-                {jumuahTimes.map((t, i) => (
-                  <div key={t} className="bg-white/10 backdrop-blur-sm rounded-2xl px-8 py-4 border border-white/20">
+                {content.jumuah.map((entry, i) => (
+                  <div key={`${entry.time}-${i}`} className="bg-white/10 backdrop-blur-sm rounded-2xl px-8 py-4 border border-white/20">
                     <p className="text-islamic-300 text-xs font-semibold uppercase tracking-wider mb-1">
                       {i === 0 ? "1st Jumu'ah" : "2nd Jumu'ah"}
                     </p>
-                    <p className="font-cinzel font-bold text-white text-2xl">{t}</p>
+                    <p className="font-cinzel font-bold text-white text-2xl">{entry.time}</p>
+                    <p className="text-white/80 text-sm mt-1">{entry.khateeb}</p>
                   </div>
                 ))}
               </div>

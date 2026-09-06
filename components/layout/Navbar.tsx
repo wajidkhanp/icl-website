@@ -54,7 +54,7 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="font-sans text-sm font-semibold text-gray-700 hover:text-islamic-600 transition-colors"
+                className="font-sans text-sm font-bold text-islamic-800 hover:text-gold-600 transition-colors"
               >
                 {link.label}
               </Link>
@@ -104,7 +104,7 @@ export default function Navbar() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setMenuOpen(false)}
-                className="font-sans text-sm font-semibold text-gray-700 hover:text-islamic-600 hover:bg-islamic-50 px-3 py-3 rounded-xl transition-colors"
+                className="font-sans text-sm font-bold text-islamic-800 hover:text-gold-600 hover:bg-islamic-50 px-3 py-3 rounded-xl transition-colors"
               >
                 {link.label}
               </Link>

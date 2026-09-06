@@ -91,7 +91,7 @@ export default function AboutSection() {
           </div>
           <div className="order-1 md:order-2" data-aos="fade-left">
             <Image
-              src="/kschool3.png"
+              src="/kschool3.jpg"
               alt="Noor Al-Quran Hifz School"
               width={640}
               height={430}

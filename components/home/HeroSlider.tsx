@@ -84,12 +84,12 @@ export default function HeroSlider() {
   const slide = slides[current];
 
   return (
-    <section aria-label="Community highlights" aria-roledescription="carousel" onFocusCapture={(event) => { if (!event.target.hasAttribute("data-rotation-control")) setPaused(true); }} className="relative flex min-h-[580px] items-center overflow-hidden md:min-h-[640px]">
+    <section aria-label="Community highlights" aria-roledescription="carousel" onFocusCapture={(event) => { if (!event.target.hasAttribute("data-rotation-control")) setPaused(true); }} className="relative flex h-[580px] items-center overflow-hidden md:h-[640px]">
       {/* Background images (all preloaded, only current visible) */}
       {slides.map((s, i) => (
         <div
           key={i}
-          className={`absolute inset-0 transition-opacity duration-700 ${
+          className={`absolute inset-0 size-full transition-opacity duration-700 ${
             i === current ? "opacity-100" : "opacity-0"
           }`}
         >
@@ -98,7 +98,7 @@ export default function HeroSlider() {
             alt=""
             fill
             sizes="100vw"
-            className="object-cover object-center"
+            className="size-full object-cover object-center"
             priority={i === 0}
           />
         </div>

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/ui/PageHero";
 import { fetchPrayerTimes, getMasjidDate } from "@/lib/prayer-times";
-import { readSiteContent } from "@/lib/site-content";
+import { getIqamaTimesForDate, readSiteContent } from "@/lib/site-content";
 import { connection } from "next/server";
 import PrayerTimesRefresh from "@/components/home/PrayerTimesRefresh";
 
@@ -16,12 +16,13 @@ export default async function PrayerTimesPage() {
   const now = new Date();
   const prayerData = await fetchPrayerTimes(now);
   const content = readSiteContent();
+  const iqamaTimes = getIqamaTimesForDate(content, now);
   const prayers = [
-    { key: "Fajr" as const, name: "Fajr", arabic: "الفجر", icon: "🌙", iqama: content.iqamaTimes.fajr },
-    { key: "Dhuhr" as const, name: "Dhuhr", arabic: "الظهر", icon: "☀️", iqama: content.iqamaTimes.dhuhr },
-    { key: "Asr" as const, name: "Asr", arabic: "العصر", icon: "🌤️", iqama: content.iqamaTimes.asr },
-    { key: "Maghrib" as const, name: "Maghrib", arabic: "المغرب", icon: "🌅", iqama: content.iqamaTimes.maghrib },
-    { key: "Isha" as const, name: "Isha", arabic: "العشاء", icon: "🌃", iqama: content.iqamaTimes.isha },
+    { key: "Fajr" as const, name: "Fajr", arabic: "الفجر", icon: "🌙", iqama: iqamaTimes.fajr },
+    { key: "Dhuhr" as const, name: "Dhuhr", arabic: "الظهر", icon: "☀️", iqama: iqamaTimes.dhuhr },
+    { key: "Asr" as const, name: "Asr", arabic: "العصر", icon: "🌤️", iqama: iqamaTimes.asr },
+    { key: "Maghrib" as const, name: "Maghrib", arabic: "المغرب", icon: "🌅", iqama: iqamaTimes.maghrib },
+    { key: "Isha" as const, name: "Isha", arabic: "العشاء", icon: "🌃", iqama: iqamaTimes.isha },
   ] as const;
 
   return (

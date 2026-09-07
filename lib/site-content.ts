@@ -44,6 +44,19 @@ export const defaultSiteContent: SiteContent = {
   seasonalNote: "Prayer times may change seasonally.",
 };
 
+export function getIqamaTimesForDate(content: SiteContent, now = new Date()): IqamaTimes {
+  const weekday = new Intl.DateTimeFormat("en-US", {
+    timeZone: "America/Phoenix",
+    weekday: "short",
+  }).format(now);
+
+  if (weekday === "Sat" || weekday === "Sun") {
+    return { ...content.iqamaTimes, dhuhr: "1:30 PM" };
+  }
+
+  return content.iqamaTimes;
+}
+
 function contentFilePath() {
   return process.env.ICL_CONTENT_FILE ?? join(process.cwd(), "data", "site-content.json");
 }

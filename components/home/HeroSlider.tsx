@@ -84,7 +84,7 @@ export default function HeroSlider() {
   const slide = slides[current];
 
   return (
-    <section aria-label="Community highlights" aria-roledescription="carousel" onFocusCapture={(event) => { if (!event.target.hasAttribute("data-rotation-control")) setPaused(true); }} className="relative flex min-h-[700px] items-start overflow-hidden md:h-[640px] md:min-h-0 md:items-center">
+    <section aria-label="Community highlights" aria-roledescription="carousel" onFocusCapture={(event) => { if (!event.target.hasAttribute("data-rotation-control")) setPaused(true); }} className="relative flex min-h-[740px] items-start overflow-hidden md:h-[640px] md:min-h-0 md:items-center">
       {/* Background images (all preloaded, only current visible) */}
       {slides.map((s, i) => (
         <div
@@ -111,7 +111,7 @@ export default function HeroSlider() {
       <div className="absolute inset-0 pattern-overlay opacity-30" />
 
       {/* Content */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-5 md:px-6 pt-36 md:pt-28 pb-28 md:pb-24">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-5 md:px-6 pt-44 md:pt-28 pb-28 md:pb-24">
         <div className="max-w-3xl">
           {/* Bismillah */}
           <h2 className="text-gold-400 text-3xl md:text-4xl font-bold mb-4 font-cinzel arabic-text text-center w-full">

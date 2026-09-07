@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { MOHID_DONATION_URL } from "@/lib/iqama-config";
+import NextIqama from "@/components/layout/NextIqama";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -61,15 +62,17 @@ export default function Navbar() {
             ))}
           </nav>
 
-          {/* Donate CTA */}
-          <a
-            href={MOHID_DONATION_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hidden lg:inline-flex h-11 min-w-28 shrink-0 items-center justify-center rounded-full bg-gold-400 px-5 text-center font-sans text-sm font-extrabold leading-none text-islamic-950 shadow-sm transition-colors hover:bg-gold-300 lg:justify-self-end"
-          >
-            Donate
-          </a>
+          <div className="hidden lg:flex items-center justify-self-end gap-3">
+            <NextIqama />
+            <a
+              href={MOHID_DONATION_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex h-11 min-w-28 shrink-0 items-center justify-center rounded-full bg-gold-400 px-5 text-center font-sans text-sm font-extrabold leading-none text-islamic-950 shadow-sm transition-colors hover:bg-gold-300"
+            >
+              Donate
+            </a>
+          </div>
 
           {/* Mobile hamburger */}
           <button
@@ -93,6 +96,10 @@ export default function Navbar() {
             )}
           </button>
         </div>
+      </div>
+
+      <div className="mt-2 flex justify-center">
+        <NextIqama mobile />
       </div>
 
       {/* Mobile dropdown — separate from the pill */}

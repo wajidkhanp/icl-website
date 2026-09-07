@@ -1,0 +1,24 @@
+import { NextResponse } from "next/server";
+import { fetchPrayerTimes, getMasjidDate } from "@/lib/prayer-times";
+import { readSiteContent } from "@/lib/site-content";
+
+export const dynamic = "force-dynamic";
+
+export async function GET() {
+  const now = new Date();
+  const prayerData = await fetchPrayerTimes(now);
+  const content = readSiteContent();
+
+  return NextResponse.json(
+    {
+      date: getMasjidDate(now),
+      timings: prayerData?.timings ?? null,
+      iqamaTimes: content.iqamaTimes,
+    },
+    {
+      headers: {
+        "Cache-Control": "public, max-age=300, stale-while-revalidate=3600",
+      },
+    },
+  );
+}

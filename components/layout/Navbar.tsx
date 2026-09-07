@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { MOHID_DONATION_URL } from "@/lib/iqama-config";
 import NextIqama from "@/components/layout/NextIqama";
 
@@ -17,6 +18,7 @@ const navLinks = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -98,9 +100,11 @@ export default function Navbar() {
         </div>
       </div>
 
-      <div className="mt-2 flex justify-center">
-        <NextIqama mobile />
-      </div>
+      {pathname === "/" && (
+        <div className="mt-2 flex justify-center">
+          <NextIqama mobile />
+        </div>
+      )}
 
       {/* Mobile dropdown — separate from the pill */}
       {menuOpen && (

@@ -27,7 +27,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <header onKeyDown={(event) => { if (event.key === "Escape") setMenuOpen(false); }} className="fixed top-0 left-0 right-0 z-50 px-4 md:px-6 py-3">
+    <header onKeyDown={(event) => { if (event.key === "Escape") setMenuOpen(false); }} className="sticky top-0 z-50 border-b border-gold-300/40 bg-gold-100/60 px-4 py-3 md:px-6">
       {/* Pill bar */}
       <div
         className={`max-w-7xl mx-auto rounded-full transition-all duration-300 px-4 py-2 ${

@@ -30,10 +30,12 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 6rem;
+  overflow-x: hidden;
 }
 
 body {
   font-family: var(--font-sans);
+  overflow-x: hidden;
 }
 
 /* Arabic / decorative text */

@@ -111,7 +111,7 @@ export default function HeroSlider() {
       <div className="absolute inset-0 pattern-overlay opacity-30" />
 
       {/* Content */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-5 md:px-6 pt-44 md:pt-28 pb-28 md:pb-24">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-5 md:px-6 pt-10 md:pt-28 pb-28 md:pb-24">
         <div className="max-w-3xl">
           {/* Bismillah */}
           <h2 className="text-gold-400 text-3xl md:text-4xl font-bold mb-4 font-cinzel arabic-text text-center w-full">

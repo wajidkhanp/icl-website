@@ -8,10 +8,12 @@ export default function PrayerTimesSection({
   prayerData,
   iqamaTimes,
   jumuah,
+  jumuahDate,
 }: {
   prayerData: PrayerData | null;
   iqamaTimes: IqamaTimes;
   jumuah: JumuahEntry[];
+  jumuahDate: string;
 }) {
   return (
     <section className="section-spacing bg-white" id="prayer-times">
@@ -40,7 +42,7 @@ export default function PrayerTimesSection({
         {!prayerData && <p role="status" className="text-center text-gray-600 mb-6">Adhan times are temporarily unavailable. Please contact the masjid to confirm today&apos;s schedule.</p>}
 
         <div data-aos="fade-up" data-aos-delay="100">
-          <IqamaTable iqamaTimes={iqamaTimes} jumuah={jumuah} />
+          <IqamaTable iqamaTimes={iqamaTimes} jumuah={jumuah} jumuahDate={jumuahDate} />
         </div>
       </div>
     </section>

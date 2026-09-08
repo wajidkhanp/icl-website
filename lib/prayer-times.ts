@@ -40,6 +40,23 @@ export function getMasjidDate(now = new Date()): string {
   }).format(now);
 }
 
+export function getJumuahDate(now = new Date()): string {
+  const weekday = new Intl.DateTimeFormat("en-US", {
+    timeZone: MASJID_TIMEZONE,
+    weekday: "short",
+  }).format(now);
+  const daysFromFriday = weekday === "Thu" || weekday === "Fri" || weekday === "Sat"
+    ? 5 - ({ Thu: 4, Fri: 5, Sat: 6 }[weekday] ?? 0)
+    : -( ({ Sun: 7, Mon: 3, Tue: 2, Wed: 1 }[weekday] ?? 0) );
+  const friday = new Date(now.getTime() + daysFromFriday * 24 * 60 * 60 * 1000);
+  return new Intl.DateTimeFormat("en-US", {
+    timeZone: MASJID_TIMEZONE,
+    month: "long",
+    day: "numeric",
+    year: "numeric",
+  }).format(friday);
+}
+
 export function getNextPrayer(timings: PrayerTimings, now = new Date()): string {
   const currentTime = new Intl.DateTimeFormat("en-GB", {
     timeZone: MASJID_TIMEZONE, hour: "2-digit", minute: "2-digit", hourCycle: "h23",

@@ -8,7 +8,7 @@ const prayers = [
   { key: "isha", name: "Isha", arabic: "العشاء", icon: "🌃" },
 ] as const;
 
-export default function IqamaTable({ iqamaTimes, jumuah }: { iqamaTimes: IqamaTimes; jumuah: JumuahEntry[] }) {
+export default function IqamaTable({ iqamaTimes, jumuah, jumuahDate }: { iqamaTimes: IqamaTimes; jumuah: JumuahEntry[]; jumuahDate: string }) {
   return (
     <div className="space-y-5">
       <div className="overflow-hidden rounded-2xl border border-islamic-200 bg-white shadow-sm">
@@ -33,7 +33,7 @@ export default function IqamaTable({ iqamaTimes, jumuah }: { iqamaTimes: IqamaTi
       <div className="overflow-hidden rounded-2xl border border-gold-300 bg-gold-100/50">
         <div className="flex items-center justify-between gap-3 border-b border-gold-300 bg-gold-400/30 px-4 py-3 sm:px-6">
           <h3 className="font-cinzel font-bold text-islamic-900">Jumu&apos;ah Prayer</h3>
-          <span className="text-xs font-semibold uppercase tracking-wider text-gold-700">Friday</span>
+          <span className="text-right text-xs font-semibold uppercase tracking-wider text-gold-700">Friday<br />{jumuahDate}</span>
         </div>
         <div className="grid divide-y divide-gold-200 sm:grid-cols-2 sm:divide-x sm:divide-y-0">
           {jumuah.map((entry, index) => (

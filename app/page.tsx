@@ -4,7 +4,7 @@ import AnnouncementBanner from "@/components/home/AnnouncementBanner";
 import DonationSection from "@/components/home/DonationSection";
 import ProgramsSection from "@/components/home/ProgramsSection";
 import AboutSection from "@/components/home/AboutSection";
-import { fetchPrayerTimes, getMasjidDate } from "@/lib/prayer-times";
+import { fetchPrayerTimes, getJumuahDate, getMasjidDate } from "@/lib/prayer-times";
 import { connection } from "next/server";
 import PrayerTimesRefresh from "@/components/home/PrayerTimesRefresh";
 import { getIqamaTimesForDate, readSiteContent } from "@/lib/site-content";
@@ -20,7 +20,7 @@ export default async function Home() {
     <>
       <PrayerTimesRefresh date={getMasjidDate(now)} />
       <HeroSlider />
-      <PrayerTimesSection prayerData={prayerData} iqamaTimes={iqamaTimes} jumuah={content.jumuah} />
+      <PrayerTimesSection prayerData={prayerData} iqamaTimes={iqamaTimes} jumuah={content.jumuah} jumuahDate={getJumuahDate(now)} />
       <AnnouncementBanner announcements={content.announcements} />
       <DonationSection />
       <ProgramsSection />

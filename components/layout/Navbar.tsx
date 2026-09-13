@@ -27,7 +27,8 @@ export default function Navbar() {
   }, []);
 
   return (
-    <header onKeyDown={(event) => { if (event.key === "Escape") setMenuOpen(false); }} className="sticky top-0 z-50 border-b border-gold-300/40 bg-gold-100/60 px-4 py-3 md:px-6">
+    <>
+      <header onKeyDown={(event) => { if (event.key === "Escape") setMenuOpen(false); }} className="fixed inset-x-0 top-0 z-50 border-b border-gold-300/40 bg-gold-100/90 px-4 py-3 backdrop-blur-md md:px-6">
       {/* Pill bar */}
       <div
         className={`max-w-7xl mx-auto rounded-full transition-all duration-300 px-4 py-2 ${
@@ -132,6 +133,11 @@ export default function Navbar() {
           </nav>
         </div>
       )}
-    </header>
+      </header>
+      <div
+        aria-hidden="true"
+        className={pathname === "/" ? "h-32 lg:h-[88px]" : "h-[88px]"}
+      />
+    </>
   );
 }

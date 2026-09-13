@@ -64,3 +64,12 @@ For Railway persistence, create and mount a persistent volume, then set
 `ICL_CONTENT_FILE` to a path on that volume, for example
 `/data/site-content.json`. Without a persistent volume, changes made through
 the console can be lost when Railway replaces or restarts the container.
+
+## Monthly visitor count
+
+The footer shows the number of unique visitors for the current Phoenix calendar
+month. It uses an anonymous, HTTP-only visitor cookie and stores only a SHA-256
+hash of that ID. Set `ICL_VISITOR_FILE` to a path on the Railway persistent
+volume, for example `/data/visitor-count.json`. The counter automatically starts
+fresh when the month changes; without the mounted volume it can reset whenever
+Railway replaces or restarts the container.

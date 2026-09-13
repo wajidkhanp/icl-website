@@ -1,4 +1,5 @@
 import Link from "next/link";
+import MonthlyVisitorCount from "@/components/layout/MonthlyVisitorCount";
 import {
   MASJID_NAME,
   MASJID_ADDRESS,
@@ -106,7 +107,8 @@ export default function Footer() {
 
       {/* Bottom bar */}
       <div className="border-t border-islamic-800 py-4 px-4 text-center text-xs text-gray-500">
-        © {new Date().getFullYear()} {MASJID_NAME} | All rights reserved.
+        <p>© {new Date().getFullYear()} {MASJID_NAME} | All rights reserved.</p>
+        <MonthlyVisitorCount />
       </div>
     </footer>
   );

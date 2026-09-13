@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync, rmSync } from "node:fs";
 import { createRequire } from "node:module";
 import { resolve } from "node:path";
 import { test } from "node:test";
@@ -32,6 +32,9 @@ const payload = () => ({ data: { timings: { ...timingStrings }, date: {
 } } });
 const prayerModule = (fetch = async () => ({ ok: true, json: async () => payload() })) =>
   loadModule("lib/prayer-times.ts", { "./iqama-config": config }, { fetch });
+const visitorModule = (file) => loadModule("lib/visitor-count.ts", {}, {
+  process: { env: { ICL_VISITOR_FILE: file }, cwd: () => "/tmp", pid: 999 },
+});
 
 const validForm = { name: "Visitor", email: "visitor@example.com", subject: "Inquiry", message: "Hello" };
 function contactModule(send, env = { RESEND_API_KEY: "test-only" }) {
@@ -117,4 +120,20 @@ test("prayer API failures, stale dates, and malformed data use the unavailable s
   for (const fetch of [async () => ({ ok: false }), async () => { throw new Error("Timeout"); }]) {
     assert.equal(await prayerModule(fetch).fetchPrayerTimes(), null);
   }
+});
+
+test("visitor counter counts a visitor once per Phoenix calendar month and resets for a new month", () => {
+  const file = "/tmp/icl-visitor-count-test.json";
+  if (existsSync(file)) rmSync(file);
+  const { getVisitorMonth, recordMonthlyVisitor } = visitorModule(file);
+  const beforePhoenixMidnight = new Date("2026-10-01T06:59:59Z");
+  const afterPhoenixMidnight = new Date("2026-10-01T07:00:00Z");
+
+  assert.equal(getVisitorMonth(beforePhoenixMidnight), "09-2026");
+  assert.equal(getVisitorMonth(afterPhoenixMidnight), "10-2026");
+  assert.equal(recordMonthlyVisitor("visitor-a", beforePhoenixMidnight), 1);
+  assert.equal(recordMonthlyVisitor("visitor-a", beforePhoenixMidnight), 1);
+  assert.equal(recordMonthlyVisitor("visitor-b", beforePhoenixMidnight), 2);
+  assert.equal(recordMonthlyVisitor("visitor-a", afterPhoenixMidnight), 1);
+  rmSync(file);
 });

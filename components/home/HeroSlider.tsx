@@ -84,7 +84,7 @@ export default function HeroSlider() {
   const slide = slides[current];
 
   return (
-    <section aria-label="Community highlights" aria-roledescription="carousel" onFocusCapture={(event) => { if (!event.target.hasAttribute("data-rotation-control")) setPaused(true); }} className="relative flex min-h-[740px] items-start overflow-hidden md:h-[640px] md:min-h-0 md:items-center">
+    <section aria-label="Community highlights" aria-roledescription="carousel" onFocusCapture={(event) => { if (!event.target.hasAttribute("data-rotation-control")) setPaused(true); }} className="relative overflow-hidden">
       {/* Background images (all preloaded, only current visible) */}
       {slides.map((s, i) => (
         <div

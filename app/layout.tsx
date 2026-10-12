@@ -6,7 +6,6 @@ import Footer from "@/components/layout/Footer";
 import AOSProvider from "@/components/layout/AOSProvider";
 import {
   MASJID_NAME,
-  MASJID_PHONE,
   MASJID_EMAIL,
   LAT,
   LNG,
@@ -69,7 +68,6 @@ const jsonLd = {
     latitude: LAT,
     longitude: LNG,
   },
-  telephone: MASJID_PHONE,
   email: MASJID_EMAIL,
 };
 

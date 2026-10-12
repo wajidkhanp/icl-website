@@ -1,7 +1,7 @@
 export const MASJID_NAME = "Islamic Center of Laveen";
 export const MASJID_ADDRESS = "5099 W Dobbins Rd #1, Laveen Village, AZ 85339";
-export const MASJID_PHONE = "(602) 237-2666";
 export const MASJID_EMAIL = "secretary@iclaveen.net";
+export const EDUCATION_EMAIL = "education@iclaveen.org";
 export const MOHID_DONATION_URL =
   "https://us.mohid.co/az/phoenix/iclaveen/masjid/online/donation";
 export const LAT = 33.3742;

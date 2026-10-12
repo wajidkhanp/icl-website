@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import PageHero from "@/components/ui/PageHero";
 import SectionTitle from "@/components/ui/SectionTitle";
+import { EDUCATION_EMAIL } from "@/lib/iqama-config";
 
 export const metadata: Metadata = {
   title: "Education — Noor Al-Quran School",
@@ -214,7 +215,7 @@ export default function EducationPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="mailto:secretary@iclaveen.net?subject=Enrollment Inquiry — Noor Al-Quran School"
+              href={`mailto:${EDUCATION_EMAIL}?subject=Enrollment Inquiry — Noor Al-Quran School`}
               className="inline-block bg-white text-islamic-700 font-cinzel font-bold px-8 py-4 rounded-full hover:bg-islamic-50 transition-colors"
             >
               Email to Enroll

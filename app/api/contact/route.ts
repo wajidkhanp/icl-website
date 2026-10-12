@@ -1,6 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 
+const EDUCATION_EMAIL = "education@iclaveen.org";
+const GENERAL_EMAIL = "secretary@iclaveen.net";
+
 function escapeHtml(value: string): string {
   return value.replace(/[&<>"']/g, (char) => ({
     "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;",
@@ -35,18 +38,22 @@ export async function POST(request: NextRequest) {
   if (!/^[^\s<>"@]+@[^\s<>"@]+\.[^\s<>"@]+$/.test(email) || /[\r\n]/.test(subject)) {
     return NextResponse.json({ error: "Please provide a valid email and subject." }, { status: 400 });
   }
+  const isEducationEnrollment = subject === "School Enrollment";
+  const directEmail = isEducationEnrollment ? EDUCATION_EMAIL : GENERAL_EMAIL;
 
   try {
     const apiKey = process.env.RESEND_API_KEY;
     if (!apiKey) {
       return NextResponse.json(
-        { error: "Email service not configured. Please email us directly at secretary@iclaveen.net" },
+        { error: `Email service not configured. Please email us directly at ${directEmail}` },
         { status: 503 }
       );
     }
 
     const resend = new Resend(apiKey);
-    const toEmail = process.env.CONTACT_TO_EMAIL ?? "secretary@iclaveen.net";
+    const toEmail = isEducationEnrollment
+      ? process.env.EDUCATION_TO_EMAIL ?? EDUCATION_EMAIL
+      : process.env.CONTACT_TO_EMAIL ?? GENERAL_EMAIL;
     const fromEmail =
       process.env.CONTACT_FROM_EMAIL ?? "contact@islamiccenteroflaveen.org";
 

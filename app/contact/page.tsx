@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/ui/PageHero";
 import ContactForm from "@/components/contact/ContactForm";
-import { MASJID_ADDRESS, MASJID_PHONE, MASJID_EMAIL } from "@/lib/iqama-config";
+import { MASJID_ADDRESS, MASJID_EMAIL } from "@/lib/iqama-config";
 
 export const metadata: Metadata = {
   title: "Contact Us",
   description:
-    "Contact Islamic Center of Laveen. Visit us at 5099 W Dobbins Rd, Laveen Village, AZ or reach us by phone and email.",
+    "Contact Islamic Center of Laveen. Visit us at 5099 W Dobbins Rd, Laveen Village, AZ or reach us by email.",
 };
 
 const contactCards = [
@@ -16,13 +16,6 @@ const contactCards = [
     value: MASJID_ADDRESS,
     link: "https://maps.google.com/?q=5099+W+Dobbins+Rd+1,+Laveen+Village,+AZ+85339",
     linkLabel: "Get Directions",
-  },
-  {
-    icon: "📞",
-    label: "Call the Masjid",
-    value: MASJID_PHONE,
-    link: `tel:${MASJID_PHONE.replace(/[^0-9]/g, "")}`,
-    linkLabel: "Call Now",
   },
   {
     icon: "✉️",

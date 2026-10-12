@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { MASJID_EMAIL } from "@/lib/iqama-config";
+import { EDUCATION_EMAIL, MASJID_EMAIL } from "@/lib/iqama-config";
 
 const SUBJECTS = [
   "General Inquiry",
@@ -24,6 +24,7 @@ export default function ContactForm() {
     subject: SUBJECTS[0],
     message: "",
   });
+  const directEmail = form.subject === "School Enrollment" ? EDUCATION_EMAIL : MASJID_EMAIL;
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -155,7 +156,7 @@ export default function ContactForm() {
         <div role="alert" className="bg-red-50 border border-red-200 text-red-700 rounded-xl px-4 py-3 text-sm">
           {errorMsg}{" "}
           <a
-            href={`mailto:${MASJID_EMAIL}`}
+            href={`mailto:${directEmail}`}
             className="underline font-semibold"
           >
             Email us directly
@@ -182,10 +183,10 @@ export default function ContactForm() {
       <p className="text-xs text-gray-400 text-center">
         Or email us directly at{" "}
         <a
-          href={`mailto:${MASJID_EMAIL}`}
+          href={`mailto:${directEmail}`}
           className="text-islamic-600 underline"
         >
-          {MASJID_EMAIL}
+          {directEmail}
         </a>
       </p>
     </form>

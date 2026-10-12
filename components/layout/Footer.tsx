@@ -3,7 +3,6 @@ import MonthlyVisitorCount from "@/components/layout/MonthlyVisitorCount";
 import {
   MASJID_NAME,
   MASJID_ADDRESS,
-  MASJID_PHONE,
   MASJID_EMAIL,
   MOHID_DONATION_URL,
 } from "@/lib/iqama-config";
@@ -20,7 +19,9 @@ const importantLinks = [
   { href: "https://www.islamicfinder.org/islamic-calendar/", label: "Islamic Calendar" },
   { href: "https://www.muslim-library.com/?lang=English", label: "Muslim e-Library" },
   { href: "https://quran.com/", label: "Noble Quran" },
-  { href: "https://www.azmuslims.org/list-of-mosques-in-arizona.html", label: "Masjids in Arizona" },
+  { href: "https://www.azmuslims.org/list-of-mosques-in-arizona.html", label: "Arizona Muslim Alliance" },
+  { href: "https://form.jotform.com/azmuslims/zakat", label: "Zakat Application" },
+  { href: "https://www.zakat.org/resource-center/zakat-calculator", label: "Zakat Calculator" },
 ];
 
 export default function Footer() {
@@ -53,7 +54,6 @@ export default function Footer() {
           </h3>
           <div className="space-y-3 text-sm text-gray-300">
             <p>📍 {MASJID_ADDRESS}</p>
-            <p>📞 <a href={`tel:${MASJID_PHONE}`} className="hover:text-islamic-300 transition-colors">{MASJID_PHONE}</a></p>
             <p>✉️ <a href={`mailto:${MASJID_EMAIL}`} className="hover:text-islamic-300 transition-colors">{MASJID_EMAIL}</a></p>
           </div>
           <div className="mt-6">

@@ -68,6 +68,16 @@ test("contact escapes submitted HTML and accepts provider confirmation", async (
   assert.ok(!sent.html.includes('<img src="x">'));
 });
 
+test("contact routes school enrollment messages to the education director", async () => {
+  let sent;
+  const { POST } = contactModule(async (message) => {
+    sent = message;
+    return { data: { id: "email-id" }, error: null };
+  });
+  assert.equal((await POST(request({ ...validForm, subject: "School Enrollment" }))).status, 200);
+  assert.equal(sent.to[0], "education@iclaveen.org");
+});
+
 test("contact never reports success on provider errors or missing confirmation", async () => {
   for (const result of [{ data: null, error: { message: "Rejected" } }, { data: null, error: null }]) {
     const { POST } = contactModule(async () => result);

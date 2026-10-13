@@ -69,7 +69,7 @@ export default function AboutSection() {
             {/* Stats */}
             <div className="grid grid-cols-3 gap-4 mt-8">
               {[
-                { label: "Students Enrolled", value: "50+" },
+                { label: "Enrollment", value: "Open" },
                 { label: "Programs Offered", value: "4" },
                 { label: "Years Serving Laveen", value: "4+" },
               ].map((stat) => (

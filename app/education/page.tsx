@@ -97,7 +97,7 @@ export default function EducationPage() {
 
               <div className="grid grid-cols-2 gap-4 mt-8">
                 {[
-                  { value: "50+", label: "Students Enrolled" },
+                  { value: "Open", label: "Enrollment" },
                   { value: "4+", label: "Years of Serving Laveen" },
                   { value: "4", label: "Active Programs" },
                   { value: "2", label: "Age Groups" },

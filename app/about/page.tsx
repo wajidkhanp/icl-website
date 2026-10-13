@@ -46,34 +46,46 @@ const values = [
 
 const timeline = [
   {
-    year: "2020",
-    title: "ICL is Founded",
-    desc: "A handful of Muslim families in Laveen came together with a shared longing — they needed a masjid close to home. With sincerity and du'a, the Islamic Center of Laveen was born.",
+    year: "2008",
+    marker: "08",
+    title: "The Journey Begins",
+    desc: "Incorporated in 2008, ICL began with Jumu’ah prayers at the César Chávez Library before moving to the Bougainvillea Golf Course. It later established its weekend school and held Jumu’ah, Fajr, Isha, and Taraweeh prayers for several years at the former Laveen Elementary School.",
   },
   {
-    year: "2021",
-    title: "Programs Come Alive",
-    desc: "The Noor Al-Quran School opened its doors, halaqas began filling with students, and the youth found their Saturday-night community. Alhamdulillah — the seeds were growing.",
+    year: "2009–2012",
+    marker: "09",
+    title: "Building Toward a Permanent Masjid",
+    desc: "In 2009, ICL purchased property on Southern Avenue with the vision of building a permanent masjid for the spiritual, educational, and community needs of Muslims in Laveen. The community broke ground in 2011 and received its building permit in 2012.",
   },
   {
-    year: "2022",
-    title: "The Community Grows",
-    desc: "Word spread. Families drove from across the West Valley to find what ICL offered — real community, genuine Islamic education, and a Jumu'ah that felt like home. Two shifts were needed.",
+    year: "2013",
+    marker: "13",
+    title: "A Place to Call Our Own",
+    desc: "ICL purchased the former RE/MAX office at 51st Avenue and Dobbins Road, renovating it into a musalla—a dedicated space for prayer and worship.",
   },
   {
-    year: "2023",
-    title: "The Building Campaign Begins",
-    desc: "We launched our permanent masjid building fund. The community responded with incredible generosity — proof that when the ummah unites for Allah, nothing is impossible.",
+    year: "Growing Beyond Our Walls",
+    marker: "→",
+    title: "Making Room for Community",
+    desc: "As the congregation and Noor Al-Quran School grew, ICL needed additional space for Jumu’ah prayers and educational programs. With permission from the City of Phoenix, the center proceeded with plans to construct a larger masjid on the south side of the property.",
   },
   {
-    year: "2024",
-    title: "Design & Planning",
-    desc: "Architectural vision for a beautiful, purpose-built masjid in Laveen. Every corner designed for worship, learning, and gathering. The blueprint of our dream.",
+    year: "2025",
+    marker: "25",
+    title: "A New Milestone",
+    desc: "ICL received its certificate of occupancy for the new masjid, marking a significant milestone in the center’s growth and development.",
   },
   {
     year: "Today",
-    title: "The Journey Continues",
-    desc: "We are building — in faith, in community, and soon, in brick and mortar. The masjid of tomorrow is being built by the hearts of today. Will yours be among them?",
+    marker: "•",
+    title: "A Thriving Community",
+    desc: "ICL hosts two Jumu’ah prayer services and is supported by a full-time imam and several faculty members. Its Hifz program and weekend Islamic school help students strengthen their knowledge of Islam and the Qur’an.",
+  },
+  {
+    year: "Looking Ahead",
+    marker: "→",
+    title: "Building for the Future",
+    desc: "ICL’s future vision includes establishing a full-time Islamic school, expanding community programs and activities, and developing business space to support the center’s long-term growth. Our journey continues, insha’Allah.",
   },
 ];
 
@@ -114,7 +126,7 @@ export default function AboutPage() {
                 <div className="text-4xl mb-4">🌟</div>
                 <h2 className="font-cinzel font-bold text-2xl text-islamic-700 mb-4">Our Vision</h2>
                 <p className="text-gray-600 leading-relaxed text-lg">
-                  A permanent masjid in the heart of Laveen — where the adhan rings out five times a day, children memorize Quran in the shade of its halls, and generations of Muslim families find peace, purpose, and belonging. Insha&apos;Allah, this is what we are building.
+                  A thriving Islamic center in the heart of Laveen — where the adhan rings out five times a day, children memorize Quran, and generations of Muslim families find peace, purpose, and belonging. Insha&apos;Allah, we will continue building for generations to come.
                 </p>
               </div>
             </div>
@@ -140,15 +152,15 @@ export default function AboutPage() {
                 Our Story
               </span>
               <h2 className="font-cinzel font-bold text-3xl md:text-4xl text-islamic-700 mb-5 leading-tight">
-                Born from the Longing<br />
-                <span className="text-islamic-400">of Believing Hearts</span>
+                Built Through Faith,<br />
+                <span className="text-islamic-400">Perseverance &amp; Community</span>
               </h2>
               <div className="space-y-4 text-gray-600 leading-relaxed">
                 <p>
-                  It began the way most great things begin — with a need and a handful of people willing to do something about it. Muslim families in Laveen were driving long distances just to pray Jumu&apos;ah. They wanted their children to grow up knowing the Quran. They wanted neighbors who shared their values.
+                  From humble beginnings at local gathering spaces to a dedicated masjid in Laveen, ICL has grown through the faith and dedication of the community it serves.
                 </p>
                 <p>
-                  So in 2020, a small group came together and made du&apos;a. They rented a space, rolled out the prayer rugs, and called the adhan. From that first congregation grew what you see today — a thriving Islamic center with daily prayers, a Quran school, halaqas for every age, and a community knit together by love of Allah.
+                  Today, ICL is a center for worship, education, and community. Two Jumu&apos;ah services, a full-time imam, faculty members, a Hifz program, and a weekend Islamic school help bring the community together and nurture the next generation.
                 </p>
                 <p className="italic border-l-4 border-gold-400 pl-4 text-gray-500">
                   &quot;Whoever travels a path in search of knowledge, Allah will make easy for them a path to Paradise.&quot;
@@ -156,7 +168,7 @@ export default function AboutPage() {
                   <span className="text-gold-600 font-semibold not-italic text-sm">— Prophet Muhammad ﷺ (Muslim)</span>
                 </p>
                 <p>
-                  We are still growing, still dreaming, still building — and every person who walks through our doors becomes part of that story. Including you.
+                  We are still growing, still dreaming, and still building. Every person who walks through our doors becomes part of that story. Including you.
                 </p>
               </div>
             </div>
@@ -171,7 +183,7 @@ export default function AboutPage() {
             badge="Our Journey"
             title="ICL"
             titleHighlight="Timeline"
-            subtitle="From a small prayer gathering to a thriving Islamic community — every milestone is a sign of Allah's barakah."
+            subtitle="From humble beginnings to a growing center for worship, education, and community — every milestone reflects faith, perseverance, and the dedication of those who helped build ICL."
           />
 
           <div className="relative">
@@ -186,7 +198,7 @@ export default function AboutPage() {
                 >
                   <div className="relative z-10 shrink-0">
                     <div className="w-8 md:w-16 h-8 md:h-16 rounded-full bg-islamic-700 flex items-center justify-center border-4 border-white shadow-md">
-                      <span className="text-white font-cinzel font-bold text-xs md:text-sm">{item.year.slice(-2)}</span>
+                      <span className="text-white font-cinzel font-bold text-xs md:text-sm">{item.marker}</span>
                     </div>
                   </div>
                   <div className="pb-6 pt-1">
